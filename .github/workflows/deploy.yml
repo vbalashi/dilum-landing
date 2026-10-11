@@ -12,8 +12,12 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare public site assets
+        run: |
+          mkdir -p .pages-assets
+          cp index.html .pages-assets/index.html
       - uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=dilum-landing --branch=main
+          command: pages deploy .pages-assets --project-name=dilum-landing --branch=main
