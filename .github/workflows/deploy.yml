@@ -1,23 +1,33 @@
-name: Deploy to Cloudflare Pages
-
+name: Build and deploy studio
 on:
   push:
+    branches: [main, codex/journal-platform]
+  pull_request:
     branches: [main]
-
+permissions:
+  contents: read
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       deployments: write
     steps:
       - uses: actions/checkout@v4
-      - name: Prepare public site assets
-        run: |
-          mkdir -p .pages-assets
-          cp index.html .pages-assets/index.html
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          SITE_PREVIEW: ${{ github.ref != 'refs/heads/main' }}
+      - run: npm run check:content
+        env:
+          SITE_PREVIEW: ${{ github.ref != 'refs/heads/main' }}
       - uses: cloudflare/wrangler-action@v3
+        if: github.event_name == 'push'
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .pages-assets --project-name=dilum-landing --branch=main
+          command: pages deploy dist --project-name=dilum-landing --branch=${{ github.ref == 'refs/heads/main' && 'main' || 'journal-preview' }}

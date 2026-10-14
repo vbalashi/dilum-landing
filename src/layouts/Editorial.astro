@@ -1,0 +1,34 @@
+---
+import '../styles/editorial.css';
+import { preview } from '../lib/content';
+const { title, description, lang='en', noindex=false, structured, article=false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
+---
+<!doctype html>
+<html lang={lang}>
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>{title} · Dilum Labs</title><meta name="description" content={description}/>
+<link rel="canonical" href={canonical}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:type" content={article?'article':'website'}/>
+<meta property="og:site_name" content="Dilum Labs"/>
+{(preview || noindex) && <meta name="robots" content="noindex,nofollow"/>}
+<link rel="alternate" type="application/rss+xml" title="Dilum Journal" href="/rss.xml"/>
+<link rel="icon" type="image/svg+xml" href="/icon.svg"/>
+<script is:inline>try { const t=localStorage.getItem('dilum-theme')||'system';document.documentElement.dataset.theme=t; } catch {}</script>
+<script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g,'\u003c')}/>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{preview && <div class="preview-banner">Editorial preview · draft content · not indexed</div>}
+<header class="masthead"><a class="brand" href="/">dilum<span>io</span><small>Independent digital studio</small></a>
+<nav aria-label="Main navigation"><a href="/#projects">Products</a><a href="/journal/">Journal</a><a href="/authors/">People</a><a href="/#contact">Contact</a></nav>
+<label class="theme-control"><span class="sr-only">Colour theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+<main id="main"><slot/></main>
+<footer class="site-footer"><p>© 2026 Dilum Labs</p><div><a href="/rss.xml">RSS</a><a href="mailto:contact@dilum.io">Get in touch</a><a href="/#contact">Business details</a></div></footer>
+<script is:inline>
+const choice=document.getElementById('theme');try{choice.value=localStorage.getItem('dilum-theme')||'system';}catch{}
+choice.addEventListener('change',()=>{document.documentElement.dataset.theme=choice.value;try{localStorage.setItem('dilum-theme',choice.value)}catch{}});
+</script>
+</body>
+</html>
