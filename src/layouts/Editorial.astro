@@ -1,9 +1,23 @@
 ---
+import '@fontsource-variable/literata';
+import '@fontsource-variable/manrope';
 import '../styles/editorial.css';
 import { preview } from '../lib/content';
+import { legalMarkup } from '../lib/studio';
+import sun from 'lucide-static/icons/sun.svg?raw';
+import moon from 'lucide-static/icons/moon.svg?raw';
+import monitor from 'lucide-static/icons/monitor.svg?raw';
 const { title, description, lang='en', noindex=false, structured, article=false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
+const path = Astro.url.pathname;
+const navigation = [
+  {label:'Products',url:'/#projects',active:path.startsWith('/products/')},
+  {label:'Journal',url:'/journal/',active:path.startsWith('/journal/')},
+  {label:'People',url:'/authors/',active:path.startsWith('/authors/')},
+  {label:'Contact',url:'#contact',active:false},
+];
+const themes = [{id:'system',label:'Follow system theme',icon:monitor},{id:'light',label:'Use light theme',icon:sun},{id:'dark',label:'Use dark theme',icon:moon}];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -15,20 +29,46 @@ const schema = structured ?? { '@context':'https://schema.org', '@type':'Organiz
 {(preview || noindex) && <meta name="robots" content="noindex,nofollow"/>}
 <link rel="alternate" type="application/rss+xml" title="Dilum Journal" href="/rss.xml"/>
 <link rel="icon" type="image/svg+xml" href="/icon.svg"/>
-<script is:inline>try { const t=localStorage.getItem('dilum-theme')||'system';document.documentElement.dataset.theme=t; } catch {}</script>
+<script is:inline>
+(() => { let theme='system';try { const saved=localStorage.getItem('dilum-theme');if(['system','light','dark'].includes(saved))theme=saved; } catch {}
+ document.documentElement.dataset.theme=theme;
+ document.documentElement.dataset.scheme=theme==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):theme;
+})();
+</script>
 <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g,'\u003c')}/>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-{preview && <div class="preview-banner">Editorial preview · draft content · not indexed</div>}
-<header class="masthead"><a class="brand" href="/">dilum<span>io</span><small>Independent digital studio</small></a>
-<nav aria-label="Main navigation"><a href="/#projects">Products</a><a href="/journal/">Journal</a><a href="/authors/">People</a><a href="/#contact">Contact</a></nav>
-<label class="theme-control"><span class="sr-only">Colour theme</span><select id="theme" aria-label="Colour theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></label></header>
+{preview && <div class="preview-banner">Editorial preview <span aria-hidden="true">·</span> Work in progress</div>}
+<header class="masthead">
+  <a class="brand" href="/" aria-label="dilumio home">dilum<span>io</span><small>Independent digital studio</small></a>
+  <nav aria-label="Main navigation">{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}</a>)}</nav>
+  <div class="theme-control" role="group" aria-label="Colour theme">
+    {themes.map(theme=><button type="button" data-theme-choice={theme.id} aria-label={theme.label} aria-pressed={theme.id==='system'?'true':'false'} title={theme.label}><span aria-hidden="true" set:html={theme.icon}/></button>)}
+  </div>
+</header>
 <main id="main"><slot/></main>
-<footer class="site-footer"><p>© 2026 Dilum Labs</p><div><a href="/rss.xml">RSS</a><a href="mailto:contact@dilum.io">Get in touch</a><a href="/#contact">Business details</a></div></footer>
+<footer class="site-footer" id="contact">
+  <div class="footer-top"><div><p class="eyebrow">Get in touch</p><h2>Let’s talk.</h2><a class="contact-link" href="mailto:contact@dilum.io">contact@dilum.io ↗</a></div><div class="business-details"><p class="eyebrow">Dilum Labs · Netherlands</p><div set:html={legalMarkup}/></div></div>
+  <div class="footer-bottom"><a class="brand footer-brand" href="/">dilum<span>io</span></a><p>© 2026 Dilum Labs</p><nav aria-label="Footer navigation"><a href="/rss.xml">RSS</a><a href="https://github.com/vbalashi">GitHub</a><a href="https://www.linkedin.com/in/khrustalev/">LinkedIn</a></nav></div>
+</footer>
 <script is:inline>
-const choice=document.getElementById('theme');try{choice.value=localStorage.getItem('dilum-theme')||'system';}catch{}
-choice.addEventListener('change',()=>{document.documentElement.dataset.theme=choice.value;try{localStorage.setItem('dilum-theme',choice.value)}catch{}});
+(() => {
+  const root=document.documentElement;
+  const media=matchMedia('(prefers-color-scheme: dark)');
+  const buttons=[...document.querySelectorAll('[data-theme-choice]')];
+  function apply(choice){
+    root.dataset.theme=choice;
+    root.dataset.scheme=choice==='system'?(media.matches?'dark':'light'):choice;
+    for(const button of buttons)button.setAttribute('aria-pressed',String(button.dataset.themeChoice===choice));
+  }
+  apply(root.dataset.theme||'system');
+  for(const button of buttons)button.addEventListener('click',()=>{
+    const choice=button.dataset.themeChoice;apply(choice);try{localStorage.setItem('dilum-theme',choice)}catch{}
+  });
+  media.addEventListener('change',()=>{if(root.dataset.theme==='system')apply('system')});
+  window.addEventListener('storage',event=>{if(event.key==='dilum-theme')apply(['light','dark','system'].includes(event.newValue)?event.newValue:'system')});
+})();
 </script>
 </body>
 </html>

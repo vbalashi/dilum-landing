@@ -1,0 +1,1 @@
+export const legalMarkup = "<p>Nikolai Andreevich Khrustalev</p>\n          <p>Dilum Labs \u00b7 eenmanszaak</p>\n          <p>Nolensstraat 43 D, 3039 PM Rotterdam, Netherlands</p>\n          <p>KvK: 99767341</p>\n          <p>BTW-id: NL005408810B39</p>";
