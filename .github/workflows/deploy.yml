@@ -1,7 +1,7 @@
 name: Build and deploy studio
 on:
   push:
-    branches: [main, codex/journal-platform]
+    branches: [main, codex/editorial-unity]
   pull_request:
     branches: [main]
 permissions:
