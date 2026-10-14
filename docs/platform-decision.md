@@ -25,4 +25,4 @@ follow-up, notclaimeddone. No externalcrosspostscreated.
 Checks: production/previewbuilds, generatedinternal links, JSON-LDparse, source
 notdeployed, draftomission fromproduction/routes/RSS/sitemap and robotsmode.
 Visualarticle in light/dark, topicnavigation andauthorrouteschecked inbrowser.
-Deploymentworkflowpublishesjournal-preview; donotmergeuntilfirstversionreview.
+Deployment workflow publishes journal-preview. Production release is authorized by the owner request to publish the first version; the article remains a draft until editorial approval.
