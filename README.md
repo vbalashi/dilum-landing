@@ -1,32 +1,33 @@
-# Dilum Labs studio website
+# Dilum Labs studio and journal
 
-Independent static studio landing associated with `dilum.io`. It presents
-products, professional experience and contact; it is separate from the
-2000NL application and product waitlist. Start agent work at [AGENTS.md](AGENTS.md).
+Independent studio site for `dilum.io`, with a static Astro journal. Product
+landing/waitlist and the2000NL runtime remain separate. Start at [AGENTS.md](AGENTS.md).
 
-## Map
+## Routes and source
 
-- [index.html](index.html): complete page, inline CSS/JS; external Google Fonts.
-- [.github/workflows/deploy.yml](.github/workflows/deploy.yml): Cloudflare Pages deploy on pushes to main, project `dilum-landing`.
-- [docs/harness-entrypoints.md](docs/harness-entrypoints.md): ownership/checkpoint for this documentation setup.
+- `src/pages/index.astro`: existing studio landing migrated to Astro, journal links added.
+- `src/pages/journal/`: archive, topic pages and readable article pages.
+- `src/pages/authors/`, `src/pages/products/`: independent author and product views.
+- `src/content/articles/*.md`: article source with YAML frontmatter.
+- `.pages.yml`: hosted Pages CMS visual editor schema.
+- `src/styles/editorial.css`: Literata/Manrope reading layout; light/dark/system.
+- [docs/editorial-workflow.md](docs/editorial-workflow.md): author/agent editing, setup and publishing.
+- [docs/platform-decision.md](docs/platform-decision.md): first platform choice, boundaries and checks.
+- [research](docs/research/2026-10-14-cms-search.md): primary-source CMS/search findings.
 
-There is no package manager, application build, CMS or blog engine configured.
-The workflow configuration proves intended deployment, not current domain
-binding or successful production status; verify the GitHub run when releasing.
+## Local and deploy
 
-## Preview and release
+Node 22.12+; `npm ci`. `SITE_PREVIEW=true npm run dev` includes drafts locally.
+`npm run build` is production: drafts are omitted. `SITE_PREVIEW=true npm run build`
+is an explicitly shareable draft preview, not private storage. `npm run check:content`
+uses the same SITE_PREVIEW value as the preceding build. `astro dev stop` stops the
+Astro7 background development server.
 
-Serve this directory with a static HTTP server for local preview. Changes go
-through an isolated worktree and a reviewed PR. The deploy workflow stages only
-`index.html` into `.pages-assets`; if public assets are added, update the explicit
-staging step. Internal Markdown and checkout metadata are not site assets.
+GitHubActions builds `dist/` and deploys only that directory to existingCloudflare
+Pages. Main is production; the journal-platform branch publishes a `journal-preview`
+branch deployment with noindex/robots exclusion. No CMS/database server or reader
+accounts required. Workflow credentials remain GitHub Secrets.
 
-## Related work
-
-- [Media strategy and article pipeline](/Users/khrustal/dev/2000nl/docs/marketing/README.md): current requirements, not a publishing engine.
-- [Product landing / waitlist](/Users/khrustal/dev/2000nl-landing/README.md).
-- [2000NL application](/Users/khrustal/dev/2000nl/AGENTS.md).
-
-Read each workspace's own instructions before changing its files. Do not copy
-sensitive career records, tax documents, licensed dictionary data or experiment
-outputs into the public site. Public author profiles use approved excerpts.
+Shared strategy and internal idea bank: `/Users/khrustal/dev/2000nl/docs/marketing/README.md`.
+The first article's earlier Russian review copy remains there as source evidence;
+the website'sMarkdown is authoritative for CMS roundtrip once editing begins.

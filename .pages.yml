@@ -1,0 +1,75 @@
+media:
+  input: public/images
+  output: /images
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: src/content/articles
+    format: yaml-frontmatter
+    filename: '{primary}.md'
+    view:
+      primary: slug
+      fields: [title, date, author, draft]
+      sort: date
+      order: desc
+    fields:
+      - {name: title, label: Title, type: string, required: true}
+      - {name: slug, label: Permanent URL name (lowercase-with-hyphens), type: string, required: true}
+      - {name: description, label: Short description, type: text, required: true}
+      - {name: date, label: Article date, type: date, required: true}
+      - {name: updated, label: Last substantial update (optional), type: date}
+      - name: author
+        label: Author
+        type: select
+        required: true
+        default: nikolai-khrustalev
+        options:
+          values:
+            - {name: nikolai-khrustalev, label: Nikolai Khrustalev}
+            - {name: olesia-khrustaleva, label: Olesia Khrustaleva}
+      - name: category
+        label: Topic
+        type: select
+        required: true
+        default: our-products
+        options:
+          values:
+            - {name: our-products, label: Our products}
+            - {name: professional-practice, label: Professional practice}
+            - {name: studio-notes, label: Studio notes}
+            - {name: learning, label: Learning}
+      - name: lang
+        label: Language
+        type: select
+        default: en
+        options:
+          values:
+            - {name: en, label: English}
+            - {name: ru, label: Russian}
+      - {name: draft, label: Draft — keep on until ready to publish, type: boolean, default: true}
+      - name: products
+        label: Related products
+        type: select
+        options:
+          multiple: true
+          values:
+            - {name: 2000nl, label: 2000 NL}
+            - {name: audiofilms, label: AudioFilms}
+            - {name: pontix, label: Pontix}
+      - name: crossposts
+        label: Also published elsewhere (optional)
+        type: object
+        list: true
+        fields:
+          - {name: platform, type: string}
+          - {name: url, type: string}
+      - name: body
+        label: Article
+        type: rich-text
+        options:
+          format: markdown
+          switcher: true
+settings:
+  content:
+    merge: true

@@ -1,0 +1,4 @@
+---
+import Editorial from '../../layouts/Editorial.astro';import {authors} from '../../lib/content';
+---
+<Editorial title="People" description="The people behind Dilum Labs and the products we build."><section class="wrap"><p class="eyebrow">People behind the studio</p><h1 class="display">Two perspectives.<br/>A shared project.</h1><div class="people-grid">{authors.map(p=><article class="person"><p class="eyebrow">{p.role}</p><h2><a href={`/authors/${p.slug}/`}>{p.name}</a></h2><p>{p.bio}</p></article>)}</div><p class="intro">Alongside our own products, we are open to consulting and project-based collaboration. <a href="mailto:contact@dilum.io">Get in touch</a>.</p></section></Editorial>

@@ -1,6 +1,12 @@
+---
+import { preview } from "../lib/content";
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="canonical" href="https://dilum.io/">
+<link rel="alternate" type="application/rss+xml" title="Dilum Journal" href="/rss.xml">
+{preview && <meta name="robots" content="noindex,nofollow" />}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dilum Labs — Software Studio</title>
@@ -628,6 +634,7 @@
       }
     }
   </style>
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 
 <body>
@@ -637,6 +644,8 @@
     <div class="wrap nav-inner">
       <a href="#" class="nav-logo">Dilum<span>.</span></a>
       <ul class="nav-links">
+        <li><a href="/journal/">Journal</a></li>
+        <li><a href="/authors/">People</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#founder">About</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -686,21 +695,21 @@
         <div class="project-card reveal reveal-delay-1">
           <div class="project-header">
             <h3 class="project-name">2000nl</h3>
-            <span class="project-badge badge-live">Live</span>
+            <span class="project-badge badge-soon">In development</span>
           </div>
           <p class="project-subtitle">Dutch vocabulary trainer</p>
           <p class="project-desc">
-            Learn the 2,000 most common Dutch words through spaced repetition.
-            Flashcard-based, progress-tracked, designed for daily practice sessions.
-            Built for learners preparing for integration or just getting started with Dutch.
+            Prepared vocabulary, flexible exercises, and spaced repetition.
+            A focused way to practise without preparing every card yourself.
+            The first public dictionary is being prepared for Dutch.
           </p>
           <div class="project-tags">
             <span class="project-tag">SRS</span>
             <span class="project-tag">Web app</span>
             <span class="project-tag">Dutch</span>
           </div>
-          <a href="https://2000.dilum.io" class="project-link" target="_blank" rel="noopener">
-            2000.dilum.io
+          <a href="/products/2000nl/" class="project-link">
+            Explore 2000 NL
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h7v7"/><path d="M13 3 5 11"/></svg>
           </a>
         </div>
@@ -709,13 +718,14 @@
         <div class="project-card reveal reveal-delay-2">
           <div class="project-header">
             <h3 class="project-name">Pontix</h3>
-            <span class="project-badge badge-available">Beta</span>
+            <span class="project-badge badge-available">Alpha</span>
           </div>
           <p class="project-subtitle">Browser translation extension</p>
           <p class="project-desc">
             Multi-provider translator for Chrome. Cloud sync, keyboard shortcuts,
             Google Books integration. Translate in context without leaving the page.
           </p>
+          <a href="/products/pontix/" class="project-link">About Pontix →</a>
           <div class="project-tags">
             <span class="project-tag">Chrome</span>
             <span class="project-tag">Extension</span>
@@ -723,10 +733,10 @@
           </div>
         </div>
 
-        <!-- Audio Film -->
+        <!-- AudioFilms -->
         <div class="project-card reveal reveal-delay-3">
           <div class="project-header">
-            <h3 class="project-name">Audio Film</h3>
+            <h3 class="project-name">AudioFilms</h3>
             <span class="project-badge badge-soon">Coming soon</span>
           </div>
           <p class="project-subtitle">Listening comprehension trainer</p>
@@ -734,6 +744,7 @@
             Learn Dutch through film and video content. Interactive subtitles with
             context-based learning — absorb vocabulary from content you actually enjoy.
           </p>
+          <a href="/products/audiofilms/" class="project-link">About AudioFilms →</a>
           <div class="project-tags">
             <span class="project-tag">Video</span>
             <span class="project-tag">Subtitles</span>
@@ -747,6 +758,7 @@
 
   <hr class="divider">
 
+  <section class="founder" id="journal"><div class="wrap"><p class="section-label">Journal</p><div class="founder-content"><h2 class="founder-label">Stories behind<br><em>what we build.</em></h2><div><p class="founder-bio">Product stories, professional practice, studio notes, and language learning. A permanent home for our writing, with a name behind every article.</p><p><a class="project-link" href="/journal/">Explore the journal →</a></p></div></div></div></section><hr class="divider">
   <!-- ─── FOUNDER ─── -->
   <section class="founder" id="founder">
     <div class="wrap">
@@ -797,9 +809,9 @@
         </div>
         <div class="footer-col">
           <h4>Products</h4>
-          <a href="https://2000.dilum.io" target="_blank" rel="noopener">2000nl</a>
+          <a href="/products/2000nl/" target="_blank" rel="noopener">2000nl</a>
           <p>Pontix</p>
-          <p>Audio Film</p>
+          <p>AudioFilms</p>
         </div>
         <div class="footer-col">
           <h4>Elsewhere</h4>
@@ -847,7 +859,7 @@
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
+        const target = document.querySelector(anchor.getAttribute('href') === '#' ? 'body' : anchor.getAttribute('href'));
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
