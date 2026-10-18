@@ -1,22 +1,22 @@
 ---
 import Editorial from '../layouts/Editorial.astro';
-import {products,authors,topics,visibleArticles,dateLabel} from '../lib/content';
-const articles=(await visibleArticles()).slice(0,2);
 ---
-<Editorial title="Independent software & ideas" description="Dilum Labs is an independent digital studio. Explore our language-learning products and the stories, experiments, and professional practice behind them.">
-<div class="wrap home">
-  <section class="studio-intro" aria-labelledby="studio-title">
-    <div><p class="eyebrow">Independent studio · The Netherlands</p><h1 class="display" id="studio-title">Software for learning.<br/><span class="soft-title">Stories from building it.</span></h1><p class="intro">We’re Nikolai and Olesia. We make digital products, bring different professional perspectives, and share what we learn along the way.</p><div class="intro-links"><a class="text-link" href="#projects">Explore our products <span aria-hidden="true">↗</span></a><a class="text-link" href="/journal/">Read the journal <span aria-hidden="true">→</span></a></div></div>
-    <aside class="studio-current"><p class="eyebrow">What we’re working on</p><a class="current-title" href="/products/2000nl/">2000 NL</a><p>A prepared dictionary and flexible vocabulary practice. Dutch first, with a broader language-learning platform in mind.</p><p class="status">In development · Dutch first</p><a class="text-link" href="/products/2000nl/">The story behind the product →</a></aside>
+<Editorial title="An independent digital studio" description="We’re Nikolai and Olesia. We build digital products around problems we know first-hand, starting with language learning.">
+<div class="wrap home-story">
+  <section class="home-opening" aria-labelledby="studio-title">
+    <p class="eyebrow">Independent digital studio · The Netherlands</p>
+    <h1 id="studio-title">A small studio.<br/><span class="soft-title">Making learning easier.</span></h1>
+    <p class="home-lead">We build digital products around problems we know first-hand. Language learning is where we’re starting.</p>
+    <a class="home-link" href="#current-work">Meet our first product <span aria-hidden="true">↓</span></a>
   </section>
-  <section class="home-section" id="projects" aria-labelledby="products-title"><div class="section-heading"><div><p class="eyebrow">01 / Our products</p><h2 id="products-title">From a word<br/>to a daily practice.</h2></div><p>Learning is our first focus. These connected projects approach vocabulary from practice, video, and the words we encounter.</p></div>
-    <div class="project-list">{products.map((product,index)=><article class="project-entry"><span class="project-number" aria-hidden="true">0{index+1}</span><div><p class="eyebrow">{product.kind}</p><h3><a href={`/products/${product.slug}/`}>{product.name}</a></h3><p class="status">{product.status}</p></div><p class="project-description">{product.description}</p><a class="project-arrow" href={`/products/${product.slug}/`} aria-label={`Explore ${product.name}`}>↗</a></article>)}</div>
+  <section class="home-feature" id="current-work" aria-labelledby="current-title">
+    <div class="feature-heading"><p class="eyebrow">Our first product · 2000 NL</p><h2 id="current-title">More time learning.<br/><span class="soft-title">Less time making flashcards.</span></h2></div>
+    <div class="feature-story"><p>Learning a language takes practice. Preparing the material shouldn’t take all your time.</p><p>With 2000 NL, we’re bringing a prepared dictionary and flexible vocabulary exercises together, so you can choose what to practise and get started.</p><p class="feature-status">In development · Dutch first</p><a class="home-link" href="/products/2000nl/">Discover 2000 NL <span aria-hidden="true">↗</span></a></div>
   </section>
-  <section class="home-section" aria-labelledby="writing-title"><div class="section-heading"><div><p class="eyebrow">02 / The journal</p><h2 id="writing-title">The work.<br/>And the thinking behind it.</h2></div><p>Product stories, professional experience, and notes on building an independent studio. Written by the people doing the work.</p></div>
-    {articles.map(entry=><article class="story-card"><div class="meta"><span>{topics.find(t=>t.slug===entry.data.category)?.name}</span><span>{dateLabel(entry.data.date)}</span><span>{entry.data.lang==='ru'?'In Russian':'In English'}</span>{entry.data.draft&&<span class="draft-label">Working draft</span>}</div><div><h3 lang={entry.data.lang}><a href={`/journal/${entry.data.slug}/`}>{entry.data.title}</a></h3><p lang={entry.data.lang}>{entry.data.description}</p><a class="text-link" href={`/journal/${entry.data.slug}/`}>Read the story →</a></div></article>)}
-    {articles.length===0&&<p class="empty">Our first essays are in preparation. In the meantime, explore the subjects we’ll be writing about.</p>}
-    <nav class="topic-nav" aria-label="Explore writing"><a href="/journal/">All articles →</a>{topics.map(topic=><a href={`/journal/topics/${topic.slug}/`}>{topic.name}</a>)}</nav>
+  <section class="home-signature" aria-label="The people behind the studio">
+    <p class="eyebrow">Made by Nikolai & Olesia</p>
+    <p>We bring together experience in software, information, business analysis, and quality. Now we’re putting it into products of our own.</p>
+    <a class="home-link" href="/authors/">A little about us <span aria-hidden="true">→</span></a>
   </section>
-  <section class="home-section" aria-labelledby="people-title"><div class="section-heading"><div><p class="eyebrow">03 / The people</p><h2 id="people-title">Two perspectives.<br/>A shared project.</h2></div><p>A family business, built on our experience in software, information, business analysis, and quality.</p></div><div class="people-grid">{authors.map(person=><article class="person"><p class="eyebrow">{person.role}</p><h3><a href={`/authors/${person.slug}/`}>{person.name}</a></h3><p>{person.bio}</p><a class="text-link" href={`/authors/${person.slug}/`}>About & writing →</a></article>)}</div><p class="collaboration">Alongside our products, we are open to consulting and project-based collaboration. <a href="mailto:contact@dilum.io">Let’s talk →</a></p></section>
 </div>
 </Editorial>

@@ -34,3 +34,12 @@ route swaps (also compatible with reduced motion). No CMS save roundtrip claimed
 Prepared block contract: docs/editorial-blocks.md. Actual specimen/article images
 are follow-up work. Preview review remains pending; do not retire this checkout
 or merge solely to clean it up.
+
+## Homepage direction — owner accepted a trial, 18 October
+
+The owner found the homepage too small and dense, repeating all section indexes.
+Trial: three-part story (studio introduction → one 2000 NL problem/approach →
+short founders' signature), larger type and generous spacing. Archives and full
+biographies stay on their dedicated routes. No invented application screenshot:
+owner will prepare real visuals later. Navigation increases to 15px desktop /
+14px mobile. This is preview-only in the same pending PR for owner review.
