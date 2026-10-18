@@ -67,8 +67,9 @@ document.addEventListener('click', async event => {
   event.stopImmediatePropagation();
   if (new URL(link.href).pathname === location.pathname) return;
   const scroll = {left:window.scrollX, top:window.scrollY};
+  const destination = new URL(link.href).pathname;
   await navigate(link.href);
-  window.scrollTo({...scroll, behavior:'instant'});
+  if (location.pathname === destination) window.scrollTo({...scroll, behavior:'instant'});
 }, {capture:true});
 media.addEventListener('change', () => {
   if (document.documentElement.dataset.theme === 'system') applyTheme('system');
@@ -78,6 +79,6 @@ window.addEventListener('storage', event => {
 });
 window.addEventListener('scroll', updateHeader, {passive:true});
 window.addEventListener('resize', updateHeader);
-document.addEventListener('astro:after-swap', restoreTheme);
+document.addEventListener('astro:after-swap', updatePage);
 document.addEventListener('astro:page-load', updatePage);
 updatePage();
