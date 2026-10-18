@@ -6,7 +6,8 @@ const files=[];function walk(dir){for(const f of readdirSync(dir,{withFileTypes:
 const html=files.filter(f=>f.endsWith('.html'));
 for(const file of html){const text=readFileSync(file,'utf8');assert.match(text,/<html[^>]+lang=/,file);assert.match(text,/<title>/,file);
  assert.ok(!/<select\b/i.test(text),`${file}: no theme dropdown`);
- for(const choice of ['system','light','dark']) assert.equal((text.match(new RegExp(`data-theme-choice="${choice}"`,'g'))||[]).length,1,`${file}: one ${choice} button`);
+ assert.equal((text.match(/data-theme-cycle/g)||[]).length,1,`${file}: one cycling theme button`);
+ for(const mode of ['system','light','dark']) assert.ok(text.includes(`data-theme-icon="${mode}"`),`${file}: ${mode} icon`);
  assert.ok(text.includes('id="contact"'),`${file}: common contact footer`);
  assert.ok(!text.includes('fonts.googleapis.com'),`${file}: fonts are hosted locally`);
  if(preview) assert.match(text,/name="robots" content="noindex,nofollow"/,file);

@@ -43,3 +43,22 @@ short founders' signature), larger type and generous spacing. Archives and full
 biographies stay on their dedicated routes. No invented application screenshot:
 owner will prepare real visuals later. Navigation increases to 15px desktop /
 14px mobile. This is preview-only in the same pending PR for owner review.
+
+## Readability and theme refinement — 18 October
+
+Owner reports undersized filters/metadata/body on both MacBook and external
+monitor. Measured CSS: filters11px, metadata10px, summaries13–14px. New working
+scale: filters/CTA16px, metadata14px, summaries18px, article20px (mobile18px).
+Heading weight in story lists increases modestly to500; homepage display stays
+large. A single44px theme button cycles System → Light → Dark, announces current
+and next mode, keeps stored preferences and follows system changes in auto mode.
+
+W3C reference: https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html and
+https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html . No universal
+minimum font size or full accessibility compliance claimed. Size choices are our
+editorial defaults; check spacing, reflow and contrast as well as font size.
+
+Product routing recommendation: studio product page is a concise project profile
+and related writing; separate branded product landing explains offer and waitlist.
+External link explicitly says Visit the 2000 NL website. No full landing duplicate
+inside studio, no new public app-access promise or waitlist form submission.

@@ -6,8 +6,13 @@ function applyTheme(choice?: string | null) {
   const root = document.documentElement;
   root.dataset.theme = choice!;
   root.dataset.scheme = choice === 'system' ? (media.matches ? 'dark' : 'light') : choice!;
-  document.querySelectorAll<HTMLButtonElement>('[data-theme-choice]').forEach(button => {
-    button.setAttribute('aria-pressed', String(button.dataset.themeChoice === choice));
+  const modes = ['system', 'light', 'dark'];
+  const labels = {system:'System', light:'Light', dark:'Dark'};
+  const next = modes[(modes.indexOf(choice!) + 1) % modes.length];
+  document.querySelectorAll<HTMLButtonElement>('[data-theme-cycle]').forEach(button => {
+    const label = `Theme: ${labels[choice as keyof typeof labels]}. Switch to ${next} theme`;
+    button.setAttribute('aria-label', label);
+    button.title = label;
   });
 }
 function restoreTheme() {
@@ -50,9 +55,10 @@ function updatePage() {
 // Delegation keeps theme controls working while Astro preserves the header.
 document.addEventListener('click', event => {
   const target = event.target instanceof Element ? event.target : null;
-  const button = target?.closest<HTMLButtonElement>('[data-theme-choice]');
+  const button = target?.closest<HTMLButtonElement>('[data-theme-cycle]');
   if (!button) return;
-  const choice = button.dataset.themeChoice!;
+  const modes = ['system', 'light', 'dark'];
+  const choice = modes[(modes.indexOf(document.documentElement.dataset.theme || 'system') + 1) % modes.length];
   applyTheme(choice);
   try { localStorage.setItem('dilum-theme', choice); } catch {}
 });

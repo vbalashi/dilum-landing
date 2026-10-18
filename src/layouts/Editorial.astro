@@ -18,7 +18,7 @@ const navigation = [
   {label:'People',url:'/authors/',active:path.startsWith('/authors/')},
   {label:'Contact',url:'/contact/',active:path.startsWith('/contact/')},
 ];
-const themes = [{id:'system',label:'Follow system theme',icon:monitor},{id:'light',label:'Use light theme',icon:sun},{id:'dark',label:'Use dark theme',icon:moon}];
+const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon:moon}];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -47,9 +47,9 @@ const themes = [{id:'system',label:'Follow system theme',icon:monitor},{id:'ligh
 <header class="masthead">
   <a class="brand" href="/" aria-label="dilumio home">dilum<span>io</span><small>Independent digital studio</small></a>
   <nav aria-label="Main navigation">{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}</a>)}</nav>
-  <div class="theme-control" role="group" aria-label="Colour theme">
-    {themes.map(theme=><button type="button" data-theme-choice={theme.id} aria-label={theme.label} aria-pressed={theme.id==='system'?'true':'false'} title={theme.label}><span aria-hidden="true" set:html={theme.icon}/></button>)}
-  </div>
+  <button class="theme-cycle" type="button" data-theme-cycle aria-label="Theme: System. Switch to light theme" title="Theme: System. Switch to light theme">
+    {themes.map(theme=><span data-theme-icon={theme.id} aria-hidden="true" set:html={theme.icon}/>)}
+  </button>
 </header>
 </div>
 <main id="main"><slot/></main>
