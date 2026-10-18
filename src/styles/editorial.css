@@ -229,3 +229,9 @@ body:has(.preview-banner) .header-space { height:154px; }
 .contact-footer .footer-top { display:block; }
 .journal .topic-nav { scrollbar-width:none; }
 .journal .topic-nav::-webkit-scrollbar { display:none; }
+@media(min-width:701px) and (max-width:900px) {
+  .header-space { height:154px; }
+  body:has(.preview-banner) .header-space { height:186px; }
+  .site-header .masthead { height:148px; padding:18px var(--gutter); gap:12px; }
+  .site-header.is-compact .masthead { height:112px; padding:12px 24px; gap:10px; }
+}
