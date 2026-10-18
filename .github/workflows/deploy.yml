@@ -1,7 +1,7 @@
 name: Build and deploy studio
 on:
   push:
-    branches: [main, codex/editorial-unity]
+    branches: [main, codex/studio-navigation]
   pull_request:
     branches: [main]
 permissions:

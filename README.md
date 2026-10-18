@@ -31,3 +31,5 @@ accounts required. Workflow credentials remain GitHub Secrets.
 Shared strategy and internal idea bank: `/Users/khrustal/dev/2000nl/docs/marketing/README.md`.
 The first article's earlier Russian review copy remains there as source evidence;
 the website'sMarkdown is authoritative for CMS roundtrip once editing begins.
+
+Navigation work: [plan and validation](docs/navigation-plan.md); [prepared article block inventory](docs/editorial-blocks.md).
