@@ -254,3 +254,10 @@ body:has(.preview-banner) .header-space { height:154px; }
  .home-signature { padding-top:45px; }
  .home-signature > p:not(.eyebrow) { font-size:25px; }
 }
+.intro-actions { display:flex; flex-wrap:wrap; gap:20px 30px; margin:32px 0 64px; }
+.product-landing > .display { max-width:900px; }
+.product-sections { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:35px; margin:35px 0 55px; }
+.product-sections .person h2 { font-size:28px; }
+.product-access { border-top:1px solid var(--line); padding-top:30px; margin-bottom:45px; }
+.product-access h2,.product-writing > h2 { font:500 28px/1.4 var(--serif); }
+.product-writing { border-top:1px solid var(--line); margin-top:65px; padding-top:30px; }

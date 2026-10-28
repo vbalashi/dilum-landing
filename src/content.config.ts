@@ -1,7 +1,7 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 const articles = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/articles' }),
+  loader: glob({ pattern: '**/*.md', base: process.env.EDITORIAL_CONTENT_DIR || './src/content/articles' }),
   schema: z.object({
     title: z.string(), slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     description: z.string(), date: z.coerce.date(), updated: z.coerce.date().optional(),

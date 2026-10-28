@@ -3,7 +3,7 @@ import { ClientRouter } from 'astro:transitions';
 import '@fontsource-variable/literata';
 import '@fontsource-variable/manrope';
 import '../styles/editorial.css';
-import { preview } from '../lib/content';
+import { preview, privatePreview } from '../lib/content';
 import { legalMarkup } from '../lib/studio';
 import sun from 'lucide-static/icons/sun.svg?raw';
 import moon from 'lucide-static/icons/moon.svg?raw';
@@ -13,8 +13,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
 const path = Astro.url.pathname;
 const navigation = [
-  {label:'Products',url:'/products/',active:path.startsWith('/products/')},
-  {label:'Journal',url:'/journal/',active:path.startsWith('/journal/')},
+  {label:'Products',url:'/products/',active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)},
+  {label:'Journal',url:'/blog/',active:path.startsWith('/blog/')},
   {label:'People',url:'/authors/',active:path.startsWith('/authors/')},
   {label:'Contact',url:'/contact/',active:path.startsWith('/contact/')},
 ];
@@ -43,7 +43,7 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 <a class="skip" href="#main">Skip to content</a>
 <div class="header-space" aria-hidden="true"></div>
 <div class="site-header" transition:persist="studio-header">
-{preview && <div class="preview-banner">Editorial preview <span aria-hidden="true">·</span> Work in progress</div>}
+{preview && <div class="preview-banner">{privatePreview?'Local editorial preview':'Website preview'} <span aria-hidden="true">·</span> {privatePreview?'Unpublished drafts — local only':'Published content only'}</div>}
 <header class="masthead">
   <a class="brand" href="/" aria-label="dilumio home">dilum<span>io</span><small>Independent digital studio</small></a>
   <nav aria-label="Main navigation">{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}</a>)}</nav>

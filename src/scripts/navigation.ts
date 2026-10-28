@@ -29,13 +29,13 @@ function updateHeader() {
 function updatePage() {
   restoreTheme();
   document.querySelectorAll<HTMLAnchorElement>('.masthead nav a').forEach(link => {
-    const active = location.pathname.startsWith(new URL(link.href).pathname);
+    const active = location.pathname.startsWith(new URL(link.href).pathname) || (link.pathname === '/products/' && ['/2000nl/','/audiofilms/','/pontix/'].includes(location.pathname));
     if (active) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
   const archive = document.querySelector('[data-journal]');
   if (archive) {
-    const topic = location.pathname.match(/^\/journal\/topics\/([^/]+)\//)?.[1] || '';
+    const topic = location.pathname.match(/^\/blog\/topics\/([^/]+)\//)?.[1] || '';
     let count = 0;
     archive.querySelectorAll<HTMLElement>('[data-article-topic]').forEach(card => {
       card.hidden = !!topic && card.dataset.articleTopic !== topic;
