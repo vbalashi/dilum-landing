@@ -5,9 +5,11 @@
 Private authoring: https://github.com/vbalashi/dilum-editorial . Its Articles
 collection is configured for Pages CMS with rich text, image uploads, authors,
 category, language, draft state, related products and optional crosspost URLs.
-The owner must authorize the installed Pages CMS app for this repo before it
-appears in the editor. That new authorization and a browser save roundtrip are
-not claimed complete. Never grant CMS access to internal dictionary/prompt repos.
+Cloud-hosted Pages CMS (app.pagescms.org) was connected on28October2026.
+The owner authorized its GitHub App for dilum-editorial only. A visual text and
+metadata save, Media upload, reverse agent edit and local preview were verified
+using the disposable editor-tour article. The real first article was unchanged.
+Never grant CMS access to internal dictionary/prompt repositories.
 
 Write there through https://app.pagescms.org/ or edit the same Markdown in VS Code.
 Saving changes private files only. There is no public deployment in that repo.
