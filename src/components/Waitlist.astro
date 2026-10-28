@@ -1,0 +1,23 @@
+---
+import { preview } from '../lib/content';
+---
+<section class="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
+  <div><p class="eyebrow">Request access</p><h2 id="waitlist-title">What would you like to learn?</h2>
+  <p>2000 NL currently starts with Dutch, with access by invitation. Tell us which language interests you. Joining does not create an account or a paid subscription.</p></div>
+  <form class="waitlist-form" data-waitlist data-preview={preview || import.meta.env.DEV?'true':'false'}>
+    <label for="waitlist-email">Email address</label>
+    <input id="waitlist-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required maxlength="254"/>
+    <label for="waitlist-language">Language you want to learn</label>
+    <input id="waitlist-language" name="language" type="text" placeholder="e.g. Dutch, Spanish, Japanese" required maxlength="80"/>
+    <fieldset><legend>What interests you most? <span>(optional)</span></legend>
+      {['Video practice','Reading & translation','Flashcards'].map(interest=><label class="waitlist-choice"><input type="checkbox" name="interests" value={interest}/><span>{interest}</span></label>)}
+    </fieldset>
+    <label class="waitlist-choice"><input type="checkbox" name="earlyTester"/><span>I'd like to help test early versions.</span></label>
+    <div class="waitlist-trap" aria-hidden="true"><label for="waitlist-website">Website</label><input id="waitlist-website" name="website" tabindex="-1" autocomplete="off"/></div>
+    <button class="waitlist-submit" type="submit">Request access</button>
+    <p class="waitlist-message" role="status" aria-live="polite"></p>
+    <p class="waitlist-privacy">We'll use your email for 2000 NL access updates. Testing invitations are optional. We store your email, learning language, interests and testing choice in our existing EU Cloudflare database. Your signup is deleted 12 months after its last update. Request earlier removal at <a href="mailto:nik@dilum.io">nik@dilum.io</a>.</p>
+    <noscript><p>This form needs JavaScript. You can also <a href="mailto:nik@dilum.io">contact us about access</a>.</p></noscript>
+  </form>
+</section>
+<script>import '../scripts/waitlist';</script>

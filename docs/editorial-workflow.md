@@ -47,8 +47,9 @@ syndication. Old /journal and /products/<product> URLs redirect on Pages.
 ## Public boundaries
 
 Product pages: /2000nl/, /audiofilms/, /pontix/. 2000NL app sign-in is separate
-from invitation-based admission. The working waitlist currently stays on the
-original product landing while its independent changes/integration are reconciled.
+from invitation-based admission. The waitlist form is on /2000nl/#waitlist and writes through the same-origin
+/api/waitlist Function to the existing signup database. The original product
+landing remains available; both entry points retain the same signup contract.
 Do not duplicate the signup storage or change retention as part of this site.
 
 Search metadata, canonical URLs, JSON-LD, RSS, sitemap and robots use approved

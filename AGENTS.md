@@ -6,7 +6,7 @@ Start at [README.md](README.md), then read only the relevant route.
 - Journal/content/CMS: [docs/editorial-workflow.md](docs/editorial-workflow.md).
 - Visual reading style: `src/layouts/Editorial.astro`, `src/styles/editorial.css`.
 - Authors/products: `src/lib/content.ts` plus their `src/pages/` routes.
-- Deploy: `.github/workflows/deploy.yml`; static output only.
+- Deploy: `.github/workflows/deploy.yml`; static pages plus the same-origin waitlist Function.
 - Research/architecture: [docs/platform-decision.md](docs/platform-decision.md).
 - Shared strategy/idea bank: `/Users/khrustal/dev/2000nl-internal/docs/marketing/README.md`.
 - Product landing: `/Users/khrustal/dev/2000nl-landing/README.md`.
@@ -30,3 +30,5 @@ Validate production AND preview builds after changing draft filtering. Run
 `npm run check:content` in the same mode as each build. Visually check reading,
 mobile width and theme interaction for design changes. Test actual CMS save
 roundtrip after account authorization before claiming editor setup complete.
+
+Waitlist: `src/components/Waitlist.astro`, `src/scripts/waitlist.ts`, `functions/api/waitlist.js`, `server/waitlist.mjs`. Existing D1 signup storage, production binding only; preview/local submissions never write. Run `npm run test:waitlist`; retention remains owned by the existing scheduled cleanup Worker.
