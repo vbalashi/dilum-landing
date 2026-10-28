@@ -1,7 +1,7 @@
 # Dilum Labs studio and journal
 
 Independent studio site for `dilum.io`, with a static Astro journal. Product
-landing/waitlist and the2000NL runtime remain separate. Start at [AGENTS.md](AGENTS.md).
+landing pages and the waitlist live here; the2000NL runtime remains separate. Start at [AGENTS.md](AGENTS.md).
 
 ## Routes and source
 
@@ -32,3 +32,5 @@ Shared strategy and internal idea bank: `/Users/khrustal/dev/2000nl-internal/doc
 Private article sources live in dilum-editorial. Approved publication exports live here.
 
 Navigation work: [plan and validation](docs/navigation-plan.md); [prepared article block inventory](docs/editorial-blocks.md).
+
+Waitlist operations: [same-site form and existing storage](docs/waitlist-operations.md).

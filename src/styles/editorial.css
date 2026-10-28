@@ -261,3 +261,20 @@ body:has(.preview-banner) .header-space { height:154px; }
 .product-access { border-top:1px solid var(--line); padding-top:30px; margin-bottom:45px; }
 .product-access h2,.product-writing > h2 { font:500 28px/1.4 var(--serif); }
 .product-writing { border-top:1px solid var(--line); margin-top:65px; padding-top:30px; }
+
+.waitlist-section { scroll-margin-top:140px; border-top:1px solid var(--line); padding-top:40px; margin-top:55px; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:clamp(30px,6vw,90px); }
+.waitlist-section h2 { font:500 36px/1.25 var(--serif); }
+.waitlist-section p { font-size:18px; line-height:1.65; }
+.waitlist-form { display:grid; gap:12px; min-width:0; }
+.waitlist-form > label,.waitlist-form legend { font-size:16px; font-weight:600; }
+.waitlist-form > input { width:100%; min-height:48px; padding:10px 12px; border:1px solid var(--line); border-radius:4px; background:var(--paper); color:var(--ink); font:inherit; box-sizing:border-box; }
+.waitlist-form fieldset { border:0; padding:8px 0; margin:0; min-width:0; }
+.waitlist-form legend span { font-weight:400; }
+.waitlist-choice { display:flex; align-items:flex-start; gap:10px; margin:12px 0; font-size:16px; line-height:1.5; cursor:pointer; }
+.waitlist-choice input { width:20px; height:20px; flex:0 0 20px; margin:2px 0 0; accent-color:var(--ink); }
+.waitlist-submit { min-height:48px; padding:12px 20px; border:1px solid var(--ink); border-radius:4px; background:var(--ink); color:var(--paper); font:600 16px var(--sans); cursor:pointer; }
+.waitlist-submit:disabled { opacity:.6; cursor:wait; }
+.waitlist-form .waitlist-privacy { font-size:14px; }
+.waitlist-message { margin:0; }
+.waitlist-trap { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+@media(max-width:700px) { .waitlist-section { grid-template-columns:1fr; } }

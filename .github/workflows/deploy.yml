@@ -1,7 +1,7 @@
 name: Build and deploy studio
 on:
   push:
-    branches: [main, codex/studio-navigation]
+    branches: [main, codex/studio-navigation, codex/809-studio-waitlist]
   pull_request:
     branches: [main]
 concurrency:
@@ -22,6 +22,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+      - run: npm run test:waitlist
       - run: npm run build
         env:
           SITE_PREVIEW: ${{ github.ref != 'refs/heads/main' }}

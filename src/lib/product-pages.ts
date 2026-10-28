@@ -8,7 +8,7 @@ export const productPages = {
    ['Choose your practice','Work with words, translations, and expressions through different exercises based on the same dictionary material.'],
    ['Return to what needs practice','Spaced repetition helps organise review, while your learning progress stays with your account.'],
   ],
-  access:'Early access is currently by invitation. Opening the app takes you to sign-in; it does not guarantee immediate admission. You can register your interest through the existing waitlist.',
+  access:'Early access is currently by invitation. Opening the app takes you to sign-in; it does not guarantee immediate admission. You can request access using the form below.',
  },
  audiofilms:{
   headline:'Make a phrase worth repeating.',
