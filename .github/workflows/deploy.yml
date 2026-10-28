@@ -1,9 +1,12 @@
 name: Build and deploy studio
 on:
   push:
-    branches: [main, codex/editorial-unity]
+    branches: [main, codex/studio-navigation]
   pull_request:
     branches: [main]
+concurrency:
+  group: studio-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -22,9 +25,11 @@ jobs:
       - run: npm run build
         env:
           SITE_PREVIEW: ${{ github.ref != 'refs/heads/main' }}
+          INCLUDE_DRAFTS: 'false'
       - run: npm run check:content
         env:
           SITE_PREVIEW: ${{ github.ref != 'refs/heads/main' }}
+          INCLUDE_DRAFTS: 'false'
       - uses: cloudflare/wrangler-action@v3
         if: github.event_name == 'push'
         with:

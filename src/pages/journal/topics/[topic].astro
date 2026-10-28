@@ -1,7 +1,0 @@
----
-import Editorial from '../../../layouts/Editorial.astro';
-import {topics,visibleArticles} from '../../../lib/content';
-export function getStaticPaths(){return topics.map(topic=>({params:{topic:topic.slug},props:{topic}}));}
-const {topic}=Astro.props;const articles=(await visibleArticles()).filter(a=>a.data.category===topic.slug);
----
-<Editorial title={topic.name} description={topic.description} noindex={articles.length===0}><section class="wrap"><p class="eyebrow">Journal / {topic.name}</p><h1 class="display">{topic.name}</h1><p class="intro">{topic.description}</p><nav class="topic-nav" aria-label="Journal topics"><a href="/journal/">All articles</a>{topics.map(t=><a href={`/journal/topics/${t.slug}/`} aria-current={t.slug===topic.slug?'page':undefined}>{t.name}</a>)}</nav>{articles.map(a=><article class="story-card"><div class="meta">{a.data.lang==='ru'?'In Russian':'In English'}{a.data.draft&&' · Working draft'}</div><div><h2 lang={a.data.lang}><a href={`/journal/${a.data.slug}/`}>{a.data.title}</a></h2><p lang={a.data.lang}>{a.data.description}</p></div></article>)}{articles.length===0&&<p class="empty">No articles here yet. <a href="/journal/">Back to the journal →</a></p>}</section></Editorial>

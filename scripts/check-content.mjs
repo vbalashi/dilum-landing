@@ -2,19 +2,40 @@ import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import {join} from 'node:path';
 import assert from 'node:assert/strict';
 const preview=process.env.SITE_PREVIEW==='true';
+const privatePreview=process.env.INCLUDE_DRAFTS==='true' && !!process.env.EDITORIAL_CONTENT_DIR && !process.env.CI;
 const files=[];function walk(dir){for(const f of readdirSync(dir,{withFileTypes:true})){const p=join(dir,f.name);f.isDirectory()?walk(p):files.push(p);}}walk('dist');
 const html=files.filter(f=>f.endsWith('.html'));
+const titles=new Set();
+const indexable=new Set();
+const sitemap=readFileSync('dist/sitemap.xml','utf8');
+const listed=new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>m[1]));
 for(const file of html){const text=readFileSync(file,'utf8');assert.match(text,/<html[^>]+lang=/,file);assert.match(text,/<title>/,file);
+ const title=text.match(/<title>([^<]+)<\/title>/)?.[1];
+ assert.ok(title && !titles.has(title),`${file}: meaningful unique title`); titles.add(title);
+ const canonical=text.match(/<link rel="canonical" href="([^"]+)"/g)||[];
+ assert.equal(canonical.length,1,`${file}: exactly one canonical`);
+ const url=canonical[0].match(/href="([^"]+)"/)[1];
+ const expected=file==='dist/404.html'?'https://dilum.io/404/':'https://dilum.io/'+file.slice(5).replace(/index\.html$/,'');
+ assert.equal(url,expected,`${file}: canonical matches final route`);
+ assert.match(text,/<meta name="description" content="[^"]+"/,`${file}: description`);
+ assert.ok(text.includes(`property="og:url" content="${url}"`),`${file}: social URL matches canonical`);
+ if(!text.includes('name="robots" content="noindex,nofollow"')) indexable.add(url);
  assert.ok(!/<select\b/i.test(text),`${file}: no theme dropdown`);
- for(const choice of ['system','light','dark']) assert.equal((text.match(new RegExp(`data-theme-choice="${choice}"`,'g'))||[]).length,1,`${file}: one ${choice} button`);
+ assert.equal((text.match(/data-theme-cycle/g)||[]).length,1,`${file}: one cycling theme button`);
+ for(const mode of ['system','light','dark']) assert.ok(text.includes(`data-theme-icon="${mode}"`),`${file}: ${mode} icon`);
  assert.ok(text.includes('id="contact"'),`${file}: common contact footer`);
  assert.ok(!text.includes('fonts.googleapis.com'),`${file}: fonts are hosted locally`);
  if(preview) assert.match(text,/name="robots" content="noindex,nofollow"/,file);
  for(const m of text.matchAll(/href="(\/[^"]*)"/g)){const path=m[1].split(/[?#]/)[0];const target=join('dist',path);assert.ok(existsSync(target)||existsSync(join(target,'index.html')),`${file}: broken ${path}`);}
  for(const m of text.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) JSON.parse(m[1]);
 }
-const draft='dist/journal/summer-of-flashcards/index.html';assert.equal(existsSync(draft),preview,'draft route follows build mode');
+const draft='dist/blog/summer-of-flashcards/index.html';assert.equal(existsSync(draft),privatePreview,'draft is local-private only');
 for(const f of ['dist/rss.xml','dist/sitemap.xml'])assert.ok(!readFileSync(f,'utf8').includes('summer-of-flashcards'),'draft must not be syndicated/indexed');
 assert.ok(!files.some(f=>f.endsWith('.md')||f.endsWith('.yml')||f.includes('source.txt')),'source/private documents must not be deployed');
 assert.equal(readFileSync('dist/robots.txt','utf8').includes('Disallow: /'),preview);
+if(!privatePreview){for(const file of html)assert.ok(!readFileSync(file,'utf8').includes('Я потратил лето на карточки'),`${file}: no private draft text`);}
+assert.ok(existsSync('dist/_redirects'),'legacy URLs have redirect map');
 console.log(`PASS: ${html.length} pages, internal links, structured JSON, draft isolation, public asset boundary (${preview?'preview':'production'})`);
+
+assert.deepEqual([...listed].sort(),[...indexable].sort(),'sitemap contains all and only indexable pages');
+console.log('PASS: unique titles, descriptions, canonical/social URLs and sitemap indexing boundary');

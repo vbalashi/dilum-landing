@@ -1,0 +1,9 @@
+/journal /blog/ 301
+/journal/ /blog/ 301
+/journal/* /blog/:splat 301
+/products/2000nl /2000nl/ 301
+/products/2000nl/ /2000nl/ 301
+/products/audiofilms /audiofilms/ 301
+/products/audiofilms/ /audiofilms/ 301
+/products/pontix /pontix/ 301
+/products/pontix/ /pontix/ 301

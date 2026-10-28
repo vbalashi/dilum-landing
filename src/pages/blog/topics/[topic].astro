@@ -1,0 +1,9 @@
+---
+import Editorial from '../../../layouts/Editorial.astro';
+import Journal from '../../../components/Journal.astro';
+import {topics,visibleArticles} from '../../../lib/content';
+export function getStaticPaths(){return topics.map(topic=>({params:{topic:topic.slug},props:{topic}}));}
+const {topic}=Astro.props;
+const empty=!(await visibleArticles()).some(a=>a.data.category===topic.slug);
+---
+<Editorial title={`${topic.name} · Journal`} description={topic.description} noindex={empty}><Journal selected={topic.slug}/></Editorial>

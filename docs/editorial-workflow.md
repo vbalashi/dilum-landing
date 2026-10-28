@@ -1,54 +1,56 @@
 # Writing and publishing
 
-## One source, two ways to edit
+## Private authoring and public delivery
 
-Canonical website content: `src/content/articles/*.md`. PagesCMS uses the same
-Markdown as an agent. Body is WYSIWYG rich text, withMarkdown source switch; it is
-not a drag/drop page builder or pixel-identical site preview. Schema preserves
-unconfigured metadata with `settings.content.merge:true`.
+Private authoring: https://github.com/vbalashi/dilum-editorial . Its Articles
+collection is configured for Pages CMS with rich text, image uploads, authors,
+category, language, draft state, related products and optional crosspost URLs.
+The owner must authorize the installed Pages CMS app for this repo before it
+appears in the editor. That new authorization and a browser save roundtrip are
+not claimed complete. Never grant CMS access to internal dictionary/prompt repos.
 
-Use fixed slug for URL; changing title must not changeURL. Select author, topic,
-language and related products. Main topic is a single choice, author/product are
-independent. Crossposts are optional platform+URL pairs; never point to invented
-publications. No separate tracker or automatic syndication.
+Write there through https://app.pagescms.org/ or edit the same Markdown in VS Code.
+Saving changes private files only. There is no public deployment in that repo.
+The earlier first-article copy is preserved; the owner may be writing a newer
+version elsewhere. Never overwrite that newer version from the preserved copy.
 
-## One-time account setup (owner action)
+## Local preview
 
-1. Visit https://app.pagescms.org/ and sign in withGitHub.
-2. Install/authorizePagesCMSGitHubApp for `vbalashi/dilum-landing` only.
-3. Select this repo and thejournal-platform branch to try theconfigured editor.
-4. Open thedraft article, make one small edit, save; verify theMarkdowncommit,
-   preview and metadata remainintact. Then an agent can safely make a secondedit
-   and ownerchecks itback ineditor. Do not claim thisroundtrip until performed.
+From the private editorial checkout, run scripts/preview.sh with an isolated
+studio checkout. The server binds127.0.0.1; the private source/media are loaded
+only for local development. INCLUDE_DRAFTS=true requires EDITORIAL_CONTENT_DIR.
+CI rejects private editorial paths and draft-inclusion flags. Both production
+and public website-preview builds omit drafts. noindex is not access control.
 
-Config alone does not authorize the app. No password/token goes in this repo.
-AdditionalGitHubApp access must be granted by the owner. ForOlesia, use normal
-repo/collaborator authorization, not a shared GitHub password.
+The local preview is for author review, not an artifact to upload. Never point
+public CI at the private repository or deploy a local private-content build.
 
-## Draft → preview → publication
+## Intentional publication
 
-`draft:true` default. Production omitsdrafts fromarticle routes, journal, author/
-product/topic lists,RSS andsitemap. Explicit preview builds includedrafts butset
-noindex and robots Disallow; preview URL is not private. No sensitive unfinished
-material insharedpreview.
+After explicit owner approval, set draft:false in the private source and use its
+scripts/export-article.py --approved to prepare one article and its referenced
+images in an isolated studio branch. The tool refuses drafts/unapproved exports,
+does not commit/push/merge, and protects dirty target files. Validate, review and
+merge that public change, then verify the article, RSS, sitemap and links.
 
-After authorapproves, setdraft:false with final metadata. Saving this on main can
-publish immediately; it is not an approval queue. Use a feature branch/PR when
-review is needed. Current first article remainsdraft:true. Its Russian text is a
-review copy; English version has not beenapproved/generated inthisimplementation.
+The public src/content/articles directory contains approved publication sources
+only. Do not put unpublished drafts in any branch of this public repo: GitHub
+source is readable independently of site build flags. The prior first-article
+source was already public; removing its current file does not erase Git history
+or immutable earlier deployments. History was not rewritten or deleted.
 
-Originalreviewcopy in2000NL is previouseditorialmaterial, not a secondindependent
-website source. OnceCMSediting starts, edit here; synchronize any requestedreview
-export from thissource ratherthan editingtwocopies simultaneously.
+Article URLs live under /blog/. Keep stable slugs when changing titles. Category
+is a single editorial topic, not arbitrary multiple tags; authors/products are
+independent fields. Crossposts are optional platform+URL pairs, no automatic
+syndication. Old /journal and /products/<product> URLs redirect on Pages.
 
-## Search basics
+## Public boundaries
 
-Server-generated visibleHTML, stablecanonicalURL, titles/descriptions, language,
-authorlinks, visible-matchingBlogPosting/Person/OrganizationJSON-LD, RSS andsitemap.
-Onlypublishedarticles areindexed/syndicated. Emptytopicpages carrynoindex. Google/
-BingSearchConsole ownership/submission andactualcrawl/index status are notset up
-bythiscode. Analytics/conversiontracking is aseparateunselectedstep.
+Product pages: /2000nl/, /audiofilms/, /pontix/. 2000NL app sign-in is separate
+from invitation-based admission. The working waitlist currently stays on the
+original product landing while its independent changes/integration are reconciled.
+Do not duplicate the signup storage or change retention as part of this site.
 
-No claim ofAIranking gains or specialllms.txt requirement. Ordinarysearchcrawl
-access andAItrainingpermissions aredifferent decisions; no provider-specific
-trainingpolicy silently added. CheckCDN/WAF ifactualcrawlaccess isblocked.
+Search metadata, canonical URLs, JSON-LD, RSS, sitemap and robots use approved
+public content. Search Console, analytics and actual crawl/index status are
+separate checks, not implied by a successful build.

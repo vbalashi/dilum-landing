@@ -8,7 +8,7 @@ Start at [README.md](README.md), then read only the relevant route.
 - Authors/products: `src/lib/content.ts` plus their `src/pages/` routes.
 - Deploy: `.github/workflows/deploy.yml`; static output only.
 - Research/architecture: [docs/platform-decision.md](docs/platform-decision.md).
-- Shared strategy/idea bank: `/Users/khrustal/dev/2000nl/docs/marketing/README.md`.
+- Shared strategy/idea bank: `/Users/khrustal/dev/2000nl-internal/docs/marketing/README.md`.
 - Product landing: `/Users/khrustal/dev/2000nl-landing/README.md`.
 - Runtime: `/Users/khrustal/dev/2000nl/AGENTS.md`.
 
@@ -18,8 +18,8 @@ before concurrent agent/human edits; commit history is not realtime coediting.
 
 Article source is plainMarkdown frontmatter, not generatedHTML. Keep stable slugs,
 authorship, language, draft state and optional crosspost links. New content defaults
-to draft. Publication must be intentional: draft=false on main triggers production
-via GitHub Actions. Preview is public to anyone withURL; noindex is not privacy.
+to draft in the PRIVATE editorial repository. Never commit drafts to this public repo. Publication must be intentional: draft=false on main triggers production
+via GitHub Actions. Website preview is public to anyone withURL; it excludes drafts. Private drafts are local-only from dilum-editorial. noindex is not privacy.
 Never commit secrets, private source transcripts or licensed data under public.
 
 Studio focus: products, author portfolios/contact, secondary project cooperation.
