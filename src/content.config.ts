@@ -10,6 +10,10 @@ const articles = defineCollection({
     lang: z.enum(['en','ru']).default('en'), draft: z.boolean().default(true),
     products: z.array(z.enum(['2000nl','audiofilms','pontix'])).default([]),
     crossposts: z.array(z.object({ platform: z.string(), url: z.string().url() })).default([]),
+  }).superRefine((article, context) => {
+    if (article.draft && !process.env.EDITORIAL_CONTENT_DIR) {
+      context.addIssue({code: 'custom', message: 'Unpublished articles belong in the private editorial repository, not the public website source.'});
+    }
   }),
 });
 export const collections = { articles };
