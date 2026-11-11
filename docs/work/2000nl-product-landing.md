@@ -64,3 +64,25 @@ copy; removed the showcase caption and its obsolete styles, adjusted mobile
 spacing for the taller card. Production build/content check and diff check pass;
 rendered images verified loaded at exact dimensions, caption absent, no horizontal
 overflow in the current narrow viewport. Existing training/builder blocks retained.
+
+## Resume 2026-11-11: AudioFilms connected landing
+
+User requested the AudioFilms prototype in the existing Chrome YouTube tab as
+screenshot source, concise value proposition and explicit concept/prototype status.
+Existing branch/worktree clean; PR #8 open; scope expanded to
+src/components/AudiofilmsLanding.astro, src/styles/audiofilms.css,
+src/lib/product-pages.ts and public/images/audiofilms/, plus the 2000nl connected
+section and existing route. No runtime/extension changes. Screenshot capture may
+open existing playback/translation controls, but must not save words or alter
+learning progress. Preserve unrelated main/worktree edits and current layout.
+
+AudioFilms outcome: captured three unaltered crops from the user's existing
+Chrome YouTube extension prototype (LUBACH video W2QGZdlXuBg, phrase16). Crops omit
+account/profile chrome; no learning/save action performed. Public screenshot
+attribution retained. AudioFilms page explains shadowing, translation, word lookup
+and connected learning, with explicit working-prototype/no-public-release status.
+2000nl gets a linked screenshot section, bilingual AI-translation benefit and
+planned direct dictionary authoring clearly marked in development. No uniqueness
+or competitor claims. Existing waitlist unchanged. Desktop1680/mobile390 image
+rendering and no horizontal overflow verified; light/dark checked. Main AGENTS.md
+change remains untouched; branch ownership remains protective under PR #8.

@@ -12,7 +12,7 @@ export const productPages = {
  },
  audiofilms:{
   headline:'Make a phrase worth repeating.',
-  intro:'A connected project for language practice with video: work with a phrase, repeat it, and explore unfamiliar vocabulary.',
+  intro:'An experimental YouTube shadowing extension: replay phrases, check translations and keep useful vocabulary for practice in 2000nl.',
   sections:[
    ['Practise in context','Video gives words a voice and a situation. The project focuses on repeating phrases without constantly losing your place.'],
    ['Connect watching and vocabulary','The direction is shared dictionary lookup and learning progress with 2000 NL. Available client features and public access are announced separately.'],

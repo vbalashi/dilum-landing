@@ -1,6 +1,8 @@
 ---
 import Editorial from '../layouts/Editorial.astro';
 import NLLanding from '../components/2000nlLanding.astro';
+import AudiofilmsLanding from '../components/AudiofilmsLanding.astro';
+import '../styles/audiofilms.css';
 import '../styles/2000nl.css';
 import {products,visibleArticles} from '../lib/content';
 import {productPages} from '../lib/product-pages';
@@ -12,7 +14,7 @@ const structured={'@context':'https://schema.org','@type':'SoftwareApplication',
 ---
 <Editorial title={`${product.name} — ${product.kind}`} description={copy.intro} structured={structured}>
 <section class="wrap product-landing">
- {product.slug==='2000nl'? <NLLanding/> : <>
+ {product.slug==='2000nl'? <NLLanding/> : product.slug==='audiofilms'? <AudiofilmsLanding/> : <>
  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>
  <p class="eyebrow">{product.name} · {product.status}</p>
  <h1 class="display">{copy.headline}</h1><p class="intro">{copy.intro}</p>
