@@ -9,7 +9,7 @@ export function profileShortlinks() {
       const rules = new Map(readFileSync(new URL('../public/_redirects', import.meta.url), 'utf8')
         .split('\n')
         .map(line => line.trim().split(/\s+/))
-        .filter(([from]) => /^\/(nikolai|olesia)\/?$/.test(from))
+        .filter(([from]) => /^\/(nikolai|olesia)(?:\/pdf)?\/?$/.test(from))
         .map(([from, to]) => [from, to]));
       // Register after Astro's middleware setup so aliases also work without a slash.
       return () => server.middlewares.stack.unshift({ route: '', handle: (req, res, next) => {

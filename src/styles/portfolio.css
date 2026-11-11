@@ -93,3 +93,4 @@
 @media(max-width:600px){.specialism-line{display:inline;}.specialism-line+.specialism-line::before{content:' ';}}
 .portfolio details[data-expanding='false'] .expand-icon{transform:rotate(0deg);}
 @media(prefers-reduced-motion:reduce){.portfolio .expand-icon{transition:none;}}
+a.cv-button{text-decoration:none;}
