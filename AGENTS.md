@@ -32,3 +32,8 @@ mobile width and theme interaction for design changes. Test actual CMS save
 roundtrip after account authorization before claiming editor setup complete.
 
 Waitlist: `src/components/Waitlist.astro`, `src/scripts/waitlist.ts`, `functions/api/waitlist.js`, `server/waitlist.mjs`. Existing D1 signup storage, production binding only; preview/local submissions never write. Run `npm run test:waitlist`; retention remains owned by the existing scheduled cleanup Worker.
+
+Local previews: install dependencies with `npm ci` inside each worktree; never
+symlink `node_modules` across checkouts. If typography differs from production,
+check font HTTP responses and actual rendered fonts before adjusting sizes.
+See [local preview troubleshooting](docs/local-preview.md).

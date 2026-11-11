@@ -1,0 +1,26 @@
+---
+import '../styles/portfolio.css';
+import arrow from 'lucide-static/icons/arrow-up-right.svg?raw';
+import download from 'lucide-static/icons/download.svg?raw';
+import plus from 'lucide-static/icons/plus.svg?raw';
+const {profile} = Astro.props;
+const {projects,experience} = profile;
+---
+<div class="wrap portfolio">
+  <a class="portfolio-back" href="/authors/">People behind Dilum</a>
+  <header class="profile-opening">
+    <div class="profile-intro"><p class="eyebrow">{profile.name} · Rotterdam, NL</p><h1>{profile.headline}<br/> {profile.headlineEnd} <em>{profile.headlineAccent}</em></h1><p class="profile-lead">{profile.lead}</p><div class="profile-actions"><a class="cv-button" href={`/cv/${profile.slug}.pdf`} download><span set:html={download}/> Download CV</a><a href={profile.linkedin}>LinkedIn <span set:html={arrow}/></a></div></div>
+    <aside class="profile-note"><p class="eyebrow">A little context</p><p>{profile.specialisms.map((line:string)=><span class="specialism-line">{line}</span>)}</p><div class="profile-note-bottom"><span>Based in the Netherlands</span><span>{profile.focus}</span><a href="mailto:contact@dilum.io">Let’s talk <span set:html={arrow}/></a></div></aside>
+  </header>
+  <nav class="profile-nav" aria-label="On this page"><a href="#projects">Selected projects</a><a href="#experience">Experience</a><a href="#about">A little about me</a><span>Scroll to explore</span></nav>
+  <section id="projects" class="portfolio-section" aria-labelledby="projects-heading"><div class="section-heading"><div><p class="eyebrow">01 / {profile.projectEyebrow}</p><h2 id="projects-heading">Selected projects</h2></div><p>A closer look at the problems,<br/> my contribution and the outcomes.</p></div>
+    <div class="consulting-projects">{projects.map(p=><article class="consulting-project"><div class="case-index" aria-hidden="true">{p.number}</div><div class="case-content"><p class="eyebrow">{p.category}</p><h3>{p.name}</h3><p class="case-premise">{p.description}</p><p class="case-overview">{p.detail}</p><p class="case-role">{p.role}</p><details class="case-details"><summary><span>Read project notes</span><span class="expand-icon" set:html={plus}/></summary><div class="case-story"><div><h4>The brief</h4><p>{p.task}</p></div><div><h4>My contribution</h4><p>{p.contribution}</p></div><div><h4>The outcome</h4><p>{p.outcome}</p></div><p class="case-tools">{p.tools}</p><a class="project-link" href={`#${p.experience}`}>Experience at {p.context}<span set:html={arrow}/></a></div></details></div></article>)}</div>
+  </section>
+  <section id="experience" class="portfolio-section" aria-labelledby="experience-heading"><div class="section-heading"><div><p class="eyebrow">02 / The work behind the work</p><h2 id="experience-heading">Experience</h2></div><p>A career in connecting ideas<br/> with real-world systems.</p></div><p class="experience-hint">Open a role to see what I worked on.</p>
+  <div class="experience-list">{experience.map(item=><details class="experience-entry" id={item.id}><summary><span class="experience-years">{item.years}</span><span class="experience-title"><strong>{item.company}</strong><span>{item.role}</span><span class="experience-summary">{item.summary}</span></span><span class="expand-icon" set:html={plus}/><span class="sr-only">Expand role details</span></summary><div class="experience-body"><ul>{item.points.map(point=><li>{point}</li>)}</ul><p>{item.tools}</p></div></details>)}</div></section>
+  <section id="about" class="portfolio-section profile-about" aria-labelledby="about-heading"><div><p class="eyebrow">03 / Beyond the job title</p><h2 id="about-heading">{profile.aboutTitle}<br/> <em>{profile.aboutAccent}</em></h2></div><div>{profile.about.map((paragraph:string)=><p>{paragraph}</p>)}<a class="project-link" href="mailto:contact@dilum.io">Have something in mind? Let’s talk<span set:html={arrow}/></a></div></section>
+  <div class="portfolio-end"><span>Prefer a concise version?</span><a class="text-cv" href={`/cv/${profile.slug}.pdf`} download>Download CV <span set:html={download}/></a></div>
+</div>
+<script>
+import '../scripts/portfolio-disclosures';
+</script>
