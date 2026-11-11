@@ -1,0 +1,31 @@
+.af-wordmark { letter-spacing:-1.6px; }
+.af-workspace { margin:55px 0 0; scroll-margin-top:145px; }
+.af-workspace > img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:14px; box-shadow:0 20px 50px #20202c16; }
+.af-workspace figcaption { font:400 12px/1.8 var(--sans); color:var(--muted); margin-top:16px; }
+.af-phrase-feature { border-top:1px solid var(--line); padding:65px 0; }
+.af-phrase-feature .nl-feature-copy { max-width:730px; }
+.af-phrase-feature .nl-feature-copy h2 { font:400 clamp(32px,3.6vw,44px)/1.25 var(--serif); letter-spacing:-.04em; margin:0 0 25px; }
+.af-phrase-feature .nl-feature-copy p { max-width:650px; }
+.af-ribbon-shot { margin:35px 0 0; }
+.af-ribbon-shot img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:12px; }
+.af-dictionary-shot { margin:0; padding:24px; background:color-mix(in srgb,var(--nl-violet) 10%,var(--panel)); border:1px solid var(--line); border-radius:14px; }
+.af-dictionary-shot img { display:block; width:100%; height:auto; border-radius:9px; }
+.af-status { border-top:1px solid var(--line); padding:60px 0 10px; }
+.af-status h2 { font:400 clamp(32px,3.6vw,44px)/1.25 var(--serif); letter-spacing:-.04em; }
+.af-status > p:not(.eyebrow) { max-width:740px; font:400 18px/1.8 var(--sans); color:var(--muted); }
+.nl-connected-product { margin:0 0 65px; border-top:1px solid var(--line); padding-top:55px; display:grid; grid-template-columns:1fr 1.1fr; align-items:center; gap:45px; }
+.nl-connected-product h2 { font:400 clamp(32px,3.5vw,43px)/1.25 var(--serif); letter-spacing:-.04em; margin:0 0 25px; }
+.nl-connected-product p:not(.eyebrow) { font:400 17px/1.85 var(--sans); color:var(--muted); }
+.nl-connected-product figure { margin:0; }
+.nl-connected-product img { display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:10px; }
+.nl-connected-product .nl-secondary { display:inline-block; margin-top:10px; }
+.nl-language-support { border-top:1px solid var(--line); padding:55px 0; }
+.nl-language-support h2 { font:400 clamp(30px,3.5vw,42px)/1.3 var(--serif); letter-spacing:-.035em; margin:0 0 25px; }
+.nl-language-support > p:not(.eyebrow) { max-width:740px; font:400 17px/1.85 var(--sans); color:var(--muted); }
+.nl-language-support .nl-roadmap { margin-top:25px; padding-left:20px; border-left:2px solid var(--line); font-size:15px; }
+@media(max-width:700px) {
+ .nl-connected-product { grid-template-columns:1fr; gap:25px; padding-top:40px; margin-bottom:45px; }
+ .af-workspace { margin-top:35px; }
+ .af-phrase-feature,.af-status,.nl-language-support { padding-top:40px; padding-bottom:40px; }
+ .af-dictionary-shot { padding:15px; }
+}

@@ -1,0 +1,41 @@
+---
+import Waitlist from './Waitlist.astro';
+---
+<div class="nl-landing">
+ <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">2000nl</span></nav>
+ <header class="nl-hero">
+  <p class="nl-wordmark">2000<span>nl</span><small>A language-learning product by Dilum</small></p>
+  <p class="eyebrow">Vocabulary practice · Early access</p>
+  <h1>Every word you meet.<br/><em>One place to learn it.</em></h1>
+  <p class="nl-lead">Make useful words part of your everyday vocabulary. Explore a dictionary, build your own practice, and return to what needs another look.</p>
+  <div class="nl-actions"><a class="nl-button" href="#waitlist">Join the waiting list <span aria-hidden="true">↗</span></a><a class="nl-secondary" href="#inside">Explore 2000nl <span aria-hidden="true">↓</span></a></div>
+  <p class="nl-access">Access is by invitation. Already have access? <a href="https://2000.dilum.io/">Sign in ↗</a></p>
+ </header>
+ <figure class="nl-showcase" id="inside">
+  <div class="nl-library-shot"><img src="/images/2000nl/library.jpg" alt="2000nl Library showing gezellig from our Dilum Nederlands dictionary, with meanings, examples and a usage note." width="1160" height="780" fetchpriority="high"/></div>
+  <div class="nl-card-shot"><img src="/images/2000nl/dictionary-card.jpg" alt="The gezellig entry from Dilum Nederlands, with word forms, examples and a note about usage." width="690" height="710"/></div>
+ </figure>
+ <section class="nl-steps" aria-label="Your learning routine">
+  <div><p class="eyebrow">01 · Discover</p><h2>Start with a word.</h2><p>Explore Dilum Nederlands, our own Dutch learning dictionary, with meanings, word forms, examples and usage notes. Choose the vocabulary you want to make your own.</p></div>
+  <div><p class="eyebrow">02 · Practise</p><h2>Make time for practice.</h2><p>Choose your material and exercises. Build a session around what you want to learn, rather than making every card yourself.</p></div>
+  <div><p class="eyebrow">03 · Remember</p><h2>Meet it again.</h2><p>Bring new words and reviews together with spaced repetition. Keep your learning progress as you return to practise.</p></div>
+ </section>
+ <section class="nl-feature">
+  <div class="nl-feature-copy"><p class="eyebrow">Practice, with a little direction</p><h2>A session that<br/>feels like yours.</h2><p>Pick a language and a source. Choose your exercises, narrow the focus, and decide how much to take on today.</p><p>The session builder brings these choices together, so you can spend your time learning.</p><a class="nl-secondary" href="#waitlist">Help shape what comes next ↗</a></div>
+  <figure class="nl-screen nl-builder"><img src="/images/2000nl/session-builder.jpg" alt="Real Session builder with language, source, exercise, filter and session settings, plus counts for new words and reviews." width="785" height="800" loading="lazy"/><figcaption>Build a session · Current application</figcaption></figure>
+ </section>
+ <section class="nl-feature nl-feature-reverse">
+  <figure class="nl-screen nl-training"><img src="/images/2000nl/training.jpg" alt="2000nl training window showing de kamer, its Dutch definition and an example sentence, with the Learn button." width="790" height="795" loading="lazy"/><figcaption>Focused practice · Current application</figcaption></figure>
+  <div class="nl-feature-copy"><p class="eyebrow">More than an isolated translation</p><h2>A word.<br/>A meaning.<br/>A little context.</h2><p>Meet words with their definitions and examples. Reveal the answer when you are ready, then continue at your own pace.</p><p>Your dictionary and your practice belong to the same learning routine.</p></div>
+ </section>
+ <section class="nl-language-support"><p class="eyebrow">Stay in the language. Get help in yours.</p><h2>A learner’s dictionary.<br/>With another way in.</h2><p>Learn from definitions and examples in the language you’re studying. When you need support, AI-powered translations can help you understand them in your chosen language — with an optional second translation language alongside it.</p><p>Use the translation as support, then return to the original. AI translations can make mistakes.</p><p class="nl-roadmap"><strong>In development:</strong> create your own dictionary entries directly in 2000nl, manually or with AI assistance.</p></section>
+ <section class="nl-connected-product"><div><p class="eyebrow">AudioFilms · In development</p><h2>Hear a word.<br/>Keep it for later.</h2><p>We’re exploring a learning layer for YouTube: repeat a phrase, show its translation, and click a word to open its dictionary card. The test prototype connects to 2000nl so useful words can become part of your practice.</p><a class="nl-secondary" href="/audiofilms/">Discover the AudioFilms concept ↗</a></div><figure><a href="/audiofilms/" aria-label="Explore the AudioFilms YouTube shadowing prototype"><img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" loading="lazy" alt="AudioFilms prototype on YouTube, showing a Dutch video, phrase controls and dictionary lookup connected to 2000nl."/></a></figure></section>
+ <p class="nl-access">Also in development: <a href="/pontix/">Pontix</a>, for looking up words as you read in your browser.</p>
+ <Waitlist cta="Join the waiting list"/>
+ <section class="nl-faq" aria-label="Questions about early access">
+  <p class="eyebrow">Before you join</p>
+  <details><summary>Can I use 2000nl today?</summary><p>Access is currently by invitation. If you already have an account, <a href="https://2000.dilum.io/">sign in to the application</a>. Otherwise, join the waiting list above for access updates.</p></details>
+  <details><summary>Which languages can I learn?</summary><p>Dutch is the first learning dictionary featured here. Tell us which language interests you when you join; other languages and connected workflows are being developed.</p></details>
+  <details><summary>Do I have to test early versions?</summary><p>No. Testing is an optional choice on the form. Joining the waiting list does not create an account or a paid subscription.</p></details>
+ </section>
+</div>

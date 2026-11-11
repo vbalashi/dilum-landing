@@ -1,8 +1,9 @@
 ---
 import { preview } from '../lib/content';
+const { cta = 'Request access' } = Astro.props;
 ---
 <section class="waitlist-section" id="waitlist" aria-labelledby="waitlist-title">
-  <div><p class="eyebrow">Request access</p><h2 id="waitlist-title">What would you like to learn?</h2>
+  <div><p class="eyebrow">Early access</p><h2 id="waitlist-title">What would you like to learn?</h2>
   <p>2000 NL currently starts with Dutch, with access by invitation. Tell us which language interests you. Joining does not create an account or a paid subscription.</p></div>
   <form class="waitlist-form" data-waitlist data-preview={preview || import.meta.env.DEV?'true':'false'}>
     <label for="waitlist-email">Email address</label>
@@ -14,7 +15,7 @@ import { preview } from '../lib/content';
     </fieldset>
     <label class="waitlist-choice"><input type="checkbox" name="earlyTester"/><span>I'd like to help test early versions.</span></label>
     <div class="waitlist-trap" aria-hidden="true"><label for="waitlist-website">Website</label><input id="waitlist-website" name="website" tabindex="-1" autocomplete="off"/></div>
-    <button class="waitlist-submit" type="submit">Request access</button>
+    <button class="waitlist-submit" type="submit">{cta}</button>
     <p class="waitlist-message" role="status" aria-live="polite"></p>
     <p class="waitlist-privacy">We'll use your email for 2000 NL access updates. Testing invitations are optional. We store your email, learning language, interests and testing choice in our existing EU Cloudflare database. Your signup is deleted 12 months after its last update. Request earlier removal at <a href="mailto:nik@dilum.io">nik@dilum.io</a>.</p>
     <noscript><p>This form needs JavaScript. You can also <a href="mailto:nik@dilum.io">contact us about access</a>.</p></noscript>

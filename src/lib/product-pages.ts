@@ -12,7 +12,7 @@ export const productPages = {
  },
  audiofilms:{
   headline:'Make a phrase worth repeating.',
-  intro:'A connected project for language practice with video: work with a phrase, repeat it, and explore unfamiliar vocabulary.',
+  intro:'An experimental YouTube shadowing extension: replay phrases, check translations and keep useful vocabulary for practice in 2000nl.',
   sections:[
    ['Practise in context','Video gives words a voice and a situation. The project focuses on repeating phrases without constantly losing your place.'],
    ['Connect watching and vocabulary','The direction is shared dictionary lookup and learning progress with 2000 NL. Available client features and public access are announced separately.'],
@@ -21,11 +21,11 @@ export const productPages = {
  },
  pontix:{
   headline:'Keep the words you encounter.',
-  intro:'An early browser-extension project for looking up words while reading and connecting useful discoveries to vocabulary practice.',
+  intro:'An early browser-extension concept for selected-text translation while reading, with a connection to 2000nl vocabulary practice in development.',
   sections:[
    ['Look up a word in context','The aim is to reduce the interruption between encountering a word and understanding it.'],
-   ['A connected vocabulary','Pontix is a client of the shared dictionary platform. The extension is in alpha; public availability and exact supported workflows are still being prepared.'],
+   ['A connected vocabulary','The direction is to connect reading with the shared dictionary platform. The extension and its integrations are in development.'],
   ],
-  access:'Pontix is in alpha. Contact us about the project; a public extension-store listing is not claimed here.',
+  access:'Pontix is in development. Contact us about the project; a public extension-store listing is not claimed here.',
  },
 } as const;
