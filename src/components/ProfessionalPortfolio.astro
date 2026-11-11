@@ -22,6 +22,7 @@ const {projects,experience} = profile;
   <div class="portfolio-end"><span>Prefer a concise version?</span><button type="button" class="text-cv" data-print-cv>Save CV as PDF <span set:html={download}/></button></div>
 </div>
 <script>
-function setupCV(){document.querySelectorAll<HTMLButtonElement>('[data-print-cv]').forEach(button=>{button.onclick=()=>{const opened=[...document.querySelectorAll<HTMLDetailsElement>('.portfolio details[open]')];document.querySelectorAll<HTMLDetailsElement>('.portfolio details').forEach(detail=>detail.open=true);window.addEventListener('afterprint',()=>{document.querySelectorAll<HTMLDetailsElement>('.portfolio details').forEach(detail=>detail.open=opened.includes(detail));},{once:true});window.print();};});}
+import { finishPortfolioDisclosures } from '../scripts/portfolio-disclosures';
+function setupCV(){document.querySelectorAll<HTMLButtonElement>('[data-print-cv]').forEach(button=>{button.onclick=()=>{finishPortfolioDisclosures();const opened=[...document.querySelectorAll<HTMLDetailsElement>('.portfolio details[open]')];document.querySelectorAll<HTMLDetailsElement>('.portfolio details').forEach(detail=>detail.open=true);window.addEventListener('afterprint',()=>{document.querySelectorAll<HTMLDetailsElement>('.portfolio details').forEach(detail=>detail.open=opened.includes(detail));},{once:true});window.print();};});}
 setupCV();document.addEventListener('astro:page-load',setupCV);
 </script>
