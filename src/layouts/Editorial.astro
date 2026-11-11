@@ -1,4 +1,8 @@
 ---
+import LanguageSwitch from '../components/LanguageSwitch.astro';
+import {isLocale} from '../i18n/locales';
+import {ui} from '../i18n/ui';
+import {pageAlternates,defaultPagePath,type PageId} from '../i18n/pages';
 import { ClientRouter } from 'astro:transitions';
 import '@fontsource-variable/literata';
 import '@fontsource-variable/manrope';
@@ -7,15 +11,20 @@ import { preview, privatePreview } from '../lib/content';
 import sun from 'lucide-static/icons/sun.svg?raw';
 import moon from 'lucide-static/icons/moon.svg?raw';
 import monitor from 'lucide-static/icons/monitor.svg?raw';
-const { title, description, lang='en', noindex=false, structured, article=false } = Astro.props;
+const { title, description, lang='en', noindex=false, structured, article=false, translationKey } = Astro.props;
+const locale=isLocale(lang)?lang:'en';
+const text=ui[locale];
+const alternatives=pageAlternates(translationKey as PageId|undefined);
+const defaultPath=translationKey?defaultPagePath(translationKey):undefined;
+const externalLanguage=locale==='en'?'':' (EN)';
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
 const path = Astro.url.pathname;
 const navigation = [
-  {label:'Products',url:'/products/',active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)},
-  {label:'Journal',url:'/blog/',active:path.startsWith('/blog/')},
-  {label:'People',url:'/authors/',active:path.startsWith('/authors/')},
-  {label:'Contact',url:'/contact/',active:path.startsWith('/contact/')},
+  {label:text.products,url:'/products/',active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)||path.startsWith('/ru/2000nl/')},
+  {label:text.journal,url:'/blog/',active:path.startsWith('/blog/')},
+  {label:text.people,url:'/authors/',active:path.startsWith('/authors/')},
+  {label:text.contact,url:'/contact/',active:path.startsWith('/contact/')},
 ];
 const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon:moon}];
 ---
@@ -24,7 +33,9 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 <head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>{title} · Dilum Labs</title><meta name="description" content={description}/>
-<link rel="canonical" href={canonical}/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:type" content={article?'article':'website'}/>
+<link rel="canonical" href={canonical}/>
+{alternatives.map(([code,url])=><link rel="alternate" hreflang={code} href={new URL(url,Astro.site).href}/>)}
+{defaultPath&&<link rel="alternate" hreflang="x-default" href={new URL(defaultPath,Astro.site).href}/>}<meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:type" content={article?'article':'website'}/>
 <meta property="og:site_name" content="Dilum Labs"/>
 {(preview || noindex) && <meta name="robots" content="noindex,nofollow"/>}
 <link rel="alternate" type="application/rss+xml" title="Dilum Journal" href="/rss.xml"/>
@@ -40,14 +51,15 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g,'\u003c')}/>
 </head>
 <body transition:animate="none">
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">{text.skip}</a>
 <div class="header-space" aria-hidden="true"></div>
-<div class="site-header" transition:persist="studio-header">
+<div class="site-header" transition:persist={`studio-header-${locale}-${translationKey??'none'}`}>
 {preview && <div class="preview-banner">{privatePreview?'Local editorial preview':'Website preview'} <span aria-hidden="true">·</span> {privatePreview?'Unpublished drafts — local only':'Published content only'}</div>}
 <header class="masthead">
-  <a class="brand" href="/" aria-label="dilumio home">dilum<span>io</span><small>Independent digital studio</small></a>
-  <nav aria-label="Main navigation">{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}</a>)}</nav>
-  <button class="theme-cycle" type="button" data-theme-cycle aria-label="Theme: System. Switch to light theme" title="Theme: System. Switch to light theme">
+  <a class="brand" href="/" aria-label={text.home}>dilum<span>io</span><small>{text.brand}</small></a>
+  <nav aria-label={text.navigation}>{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}{locale!=='en'&&<span class="nav-language" lang="en" title={text.english}>EN</span>}</a>)}</nav>
+  <LanguageSwitch pageId={translationKey} locale={locale}/>
+  <button class="theme-cycle" type="button" data-theme-cycle aria-label={locale==='ru'?'Тема: системная. Переключить: светлая':'Theme: System. Switch to light theme'} title={locale==='ru'?'Тема: системная. Переключить: светлая':'Theme: System. Switch to light theme'}>
     {themes.map(theme=><span data-theme-icon={theme.id} aria-hidden="true" set:html={theme.icon}/>)}
   </button>
 </header>
@@ -55,7 +67,7 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 <main id="main"><slot/></main>
 <footer class="site-footer" id="contact">
   <div class="footer-contact-row"><p>Dilum Labs · Rotterdam</p><a class="contact-link" href="mailto:contact@dilum.io">contact@dilum.io ↗</a></div>
-  <div class="footer-bottom"><p>© 2026 Dilum Labs</p><nav aria-label="Footer navigation"><a href="/contact/">Contact</a><a href="/contact/#company-details">Company details</a><a href="https://www.linkedin.com/in/khrustalev/">LinkedIn</a><a href="https://github.com/vbalashi">GitHub</a><a href="/rss.xml">RSS</a></nav></div>
+  <div class="footer-bottom"><p>© 2026 Dilum Labs</p><nav aria-label={text.footer}><a href="/contact/">{text.contact}{externalLanguage}</a><a href="/contact/#company-details">{text.company}{externalLanguage}</a><a href="https://www.linkedin.com/in/khrustalev/">LinkedIn</a><a href="https://github.com/vbalashi">GitHub</a><a href="/rss.xml">RSS</a></nav></div>
 </footer>
 <script>import '../scripts/navigation';</script>
 </body>

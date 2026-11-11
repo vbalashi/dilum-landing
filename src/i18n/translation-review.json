@@ -1,0 +1,13 @@
+{
+  "product.2000nl": {
+    "sourceLocale": "en",
+    "sourceFile": "products/2000nl.en.json",
+    "translations": {
+      "ru": {
+        "file": "products/2000nl.ru.json",
+        "status": "reviewed",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107"
+      }
+    }
+  }
+}
