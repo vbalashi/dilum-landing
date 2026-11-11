@@ -86,3 +86,9 @@ planned direct dictionary authoring clearly marked in development. No uniqueness
 or competitor claims. Existing waitlist unchanged. Desktop1680/mobile390 image
 rendering and no horizontal overflow verified; light/dark checked. Main AGENTS.md
 change remains untouched; branch ownership remains protective under PR #8.
+
+AudioFilms review-ready receipt: implementation
+20d31e6f47c6a3d98588368e23ea1b53ba35c4a7 passed both production/preview builds
+and content checks. PR #8 title/body now cover both connected product pages.
+Scoped changes pushed, clean tree; no merge or production deploy. Preview left
+open at http://localhost:4326/audiofilms/#af-preview . Ownership retained for review.
