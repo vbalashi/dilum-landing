@@ -89,3 +89,5 @@
 .section-heading>p{font-size:17px;}
 @media(max-width:600px){.profile-lead,.profile-about>div>p:not(.eyebrow){font-size:18px;}.case-overview,.case-story p,.experience-body li{font-size:17px;}}
 @media print{.case-overview,.case-story p,.experience-body li{font-size:9pt;}.experience-title>span,.experience-title .experience-summary,.section-heading>p{font-size:10pt;}.profile-lead{font-size:10pt;}}
+.specialism-line{display:block;}
+@media(max-width:600px){.specialism-line{display:inline;}.specialism-line+.specialism-line::before{content:' ';}}
