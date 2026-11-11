@@ -7,7 +7,7 @@ const {pageId,locale}=Astro.props as {pageId?:PageId;locale:Locale};
 const variants=pageAlternates(pageId);
 ---
 {variants.length>1&&<details class="language-switch" data-language-switch>
-<summary aria-label={locale==='ru'?`Язык страницы: ${locales[locale].label}`:`Page language: ${locales[locale].label}`}><span class="language-globe" set:html={globe}/><span>{locales[locale].label}</span><span class="language-chevron" set:html={chevron}/></summary>
-<ul class="language-options">{variants.map(([code,path])=><li><a href={path} lang={code} hreflang={code} data-language-link={code} aria-current={code===locale?'page':undefined} data-astro-reload><span>{locales[code].label}</span></a></li>)}</ul>
+<summary title={locales[locale].label} aria-label={locale==='ru'?`Язык страницы: ${locales[locale].label}`:`Page language: ${locales[locale].label}`}><span class="language-globe" set:html={globe}/><span>{locales[locale].short}</span><span class="language-chevron" set:html={chevron}/></summary>
+<ul class="language-options">{variants.map(([code,path])=><li><a href={path} lang={code} hreflang={code} data-language-link={code} aria-label={locales[code].label} title={locales[code].label} aria-current={code===locale?'page':undefined} data-astro-reload><span>{locales[code].short}</span></a></li>)}</ul>
 </details>}
 <script>import '../scripts/language-switch';</script>
