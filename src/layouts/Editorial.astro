@@ -30,6 +30,7 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 {(preview || noindex) && <meta name="robots" content="noindex,nofollow"/>}
 <link rel="alternate" type="application/rss+xml" title="Dilum Journal" href="/rss.xml"/>
 <link rel="icon" type="image/svg+xml" href="/icon.svg"/>
+<script is:inline defer src="https://cloud.umami.is/script.js" data-website-id="09001b3a-0258-4183-84ba-068e3a3a843b" data-domains="dilum.io"></script>
 <ClientRouter fallback="swap"/>
 <script is:inline>
 (() => { let theme='system';try { const saved=localStorage.getItem('dilum-theme');if(['system','light','dark'].includes(saved))theme=saved; } catch {}

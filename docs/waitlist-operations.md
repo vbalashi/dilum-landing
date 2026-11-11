@@ -13,6 +13,15 @@ working checkout. The handler derives from its committed08ceb02 implementation.
 Existing daily retention remains unchanged:12 months since updated_at, removal
 requests to nik@dilum.io. The cleanup Worker remains the existing owner.
 
+## Analytics
+
+Umami is loaded from the shared editorial layout and restricted to `dilum.io`,
+so local and Pages preview hostnames are excluded. It records page visits and
+referrers; the waitlist client sends `waitlist_signup_success` only after the
+server confirms the signup. Never include email or form fields in analytics
+events. Cloudflare Web Analytics is enabled on the Pages project and its beacon
+is applied on the next Pages deployment.
+
 ## Deployment
 
 Production dilum-landing Pages must bind WAITLIST_DB to the existing
