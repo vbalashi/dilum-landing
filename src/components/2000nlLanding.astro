@@ -1,6 +1,7 @@
 ---
 import Waitlist from './Waitlist.astro';
 import { nlCopy } from '../i18n/products/2000nl';
+import {productPath} from '../i18n/pages';
 import type { Locale } from '../i18n/locales';
 const {locale='en'} = Astro.props as {locale?:Locale};
 const copy = nlCopy[locale];
@@ -33,8 +34,8 @@ const copy = nlCopy[locale];
   <div class="nl-feature-copy"><p class="eyebrow">{copy.contextEyebrow}</p><h2>{copy.contextTitleFirst}<br/>{copy.contextTitleSecond}<br/>{copy.contextTitleThird}</h2><p>{copy.contextBody}</p><p>{copy.contextMore}</p></div>
  </section>
  <section class="nl-language-support"><p class="eyebrow">{copy.supportEyebrow}</p><h2>{copy.supportTitleFirst}<br/>{copy.supportTitleSecond}</h2><p>{copy.supportBody}</p><p>{copy.supportCaution}</p><p class="nl-roadmap"><strong>{copy.plannedLabel}</strong>{copy.plannedBody}</p></section>
- <section class="nl-connected-product"><div><p class="eyebrow">{copy.audiofilmsStatus}</p><h2>{copy.audiofilmsTitleFirst}<br/>{copy.audiofilmsTitleSecond}</h2><p>{copy.audiofilmsBody}</p><a class="nl-secondary" href="/audiofilms/">{copy.audiofilmsLink}</a></div><figure><a href="/audiofilms/" aria-label={copy.audiofilmsLabel}><img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" loading="lazy" alt={copy.audiofilmsAlt}/></a></figure></section>
- <p class="nl-access">{copy.pontixIntro}<a href="/pontix/">Pontix</a>{copy.pontixBody}</p>
+ <section class="nl-connected-product"><div><p class="eyebrow">{copy.audiofilmsStatus}</p><h2>{copy.audiofilmsTitleFirst}<br/>{copy.audiofilmsTitleSecond}</h2><p>{copy.audiofilmsBody}</p><a class="nl-secondary" href={productPath('audiofilms',locale)}>{copy.audiofilmsLink}</a></div><figure><a href={productPath('audiofilms',locale)} aria-label={copy.audiofilmsLabel}><img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" loading="lazy" alt={copy.audiofilmsAlt}/></a></figure></section>
+ <p class="nl-access">{copy.pontixIntro}<a href={productPath('pontix',locale)}>Pontix</a>{copy.pontixBody}</p>
  <Waitlist locale={locale} cta={copy.join.trim()}/>
  <section class="nl-faq" aria-label={copy.faqLabel}>
   <p class="eyebrow">{copy.faqEyebrow}</p>

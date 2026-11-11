@@ -1,15 +1,13 @@
-import { type Locale, defaultLocale } from './locales';
-
-export type PageId = `product.${string}` | `collection.${string}`;
-export type PageVariants = Partial<Record<Locale, string>>;
-// Only register existing, reviewed routes. Missing translations have no fake URL.
-export const translatedPages: Record<PageId, PageVariants> = {
-  'product.2000nl': { en: '/2000nl/', ru: '/ru/2000nl/' },
-};
-export function pageAlternates(id?: PageId) {
-  return id ? Object.entries(translatedPages[id] ?? {}) as [Locale, string][] : [];
-}
-export function defaultPagePath(id: PageId) {
-  return translatedPages[id]?.[defaultLocale];
-}
-export const localizedPagePaths = () => [...new Set(Object.values(translatedPages).flatMap(variants => Object.values(variants)))];
+import {type Locale,defaultLocale,localeCodes,localizedPath} from './locales';
+export const productIds=['2000nl','audiofilms','pontix'] as const;
+export type ProductId=typeof productIds[number];
+export type PageId=`product.${string}`|`collection.${string}`;
+export type PageVariants=Partial<Record<Locale,string>>;
+// All registered products have complete translated copy in each active locale.
+export const translatedPages:Record<PageId,PageVariants>=Object.fromEntries(productIds.map(product=>[
+ `product.${product}`,Object.fromEntries(localeCodes.map(locale=>[locale,localizedPath(`/${product}/`,locale)])),
+]));
+export function pageAlternates(id?:PageId){return id?Object.entries(translatedPages[id]??{}) as [Locale,string][]:[];}
+export const defaultPagePath=(id:PageId)=>translatedPages[id]?.[defaultLocale];
+export const productPath=(product:ProductId,locale:Locale)=>translatedPages[`product.${product}`][locale]!;
+export const localizedPagePaths=()=>[...new Set(Object.values(translatedPages).flatMap(variants=>Object.values(variants)))];

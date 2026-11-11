@@ -1,17 +1,25 @@
+---
+import {productCopy} from '../i18n/products';
+import {ui} from '../i18n/ui';
+import {productPath} from '../i18n/pages';
+import type {Locale} from '../i18n/locales';
+const {locale='en'}=Astro.props as {locale?:Locale};
+const copy=productCopy['pontix'][locale];
+---
 <div class="nl-landing pontix-landing">
- <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">Pontix</span></nav>
+ <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href="/products/">{ui[locale].products}{locale!=='en'&&' (EN)'}</a><span aria-hidden="true">/</span><span aria-current="page">Pontix</span></nav>
  <header class="nl-hero">
-  <div class="pontix-identity"><img src="/images/pontix/icon.png" width="64" height="64" alt=""/><p class="nl-wordmark">Pontix<small>Reading & translation · A Dilum project</small></p></div>
-  <p class="eyebrow">In development · Early concept</p>
-  <h1>Stay with the story.<br/><em>Understand the words.</em></h1>
-  <p class="nl-lead">A browser extension idea for the moments when an unfamiliar word interrupts your reading. Select a word or a passage, explore its meaning nearby, and keep your place.</p>
-  <div class="nl-actions"><a class="nl-button" href="mailto:contact@dilum.io?subject=Pontix">Ask about the project <span aria-hidden="true">↗</span></a><a class="nl-secondary" href="/2000nl/">Explore 2000nl ↗</a></div>
-  <p class="nl-access">An early prototype is being explored. Pontix is not available as a finished public extension.</p>
+  <div class="pontix-identity"><img src="/images/pontix/icon.png" width="64" height="64" alt=""/><p class="nl-wordmark">Pontix<small>{copy.tagline}</small></p></div>
+  <p class="eyebrow">{copy.status}</p>
+  <h1>{copy.heroFirst}<br/><em>{copy.heroSecond}</em></h1>
+  <p class="nl-lead">{copy.lead}</p>
+  <div class="nl-actions"><a class="nl-button" href="mailto:contact@dilum.io?subject=Pontix">{copy.ask}<span aria-hidden="true">↗</span></a><a class="nl-secondary" href={productPath('2000nl',locale)}>{copy.explore}</a></div>
+  <p class="nl-access">{copy.access}</p>
  </header>
- <section class="nl-steps" aria-label="The Pontix idea">
-  <div><p class="eyebrow">01 · Read</p><h2>Start where you are.</h2><p>The article, webpage or passage you chose is the starting point. The idea is to bring language support into your reading.</p></div>
-  <div><p class="eyebrow">02 · Understand</p><h2>A little help alongside.</h2><p>The early sidebar prototype explores selected-text translation, with multiple translation services and saved preferences.</p></div>
-  <div><p class="eyebrow">03 · Connect</p><h2>Keep useful discoveries.</h2><p>The direction is to connect words you encounter with dictionary lookup and vocabulary practice in 2000nl. This connection is still in development.</p></div>
+ <section class="nl-steps" aria-label={copy.stepsLabel}>
+  <div><p class="eyebrow">{copy.readStep}</p><h2>{copy.readTitle}</h2><p>{copy.readBody}</p></div>
+  <div><p class="eyebrow">{copy.understandStep}</p><h2>{copy.understandTitle}</h2><p>{copy.understandBody}</p></div>
+  <div><p class="eyebrow">{copy.connectStep}</p><h2>{copy.connectTitle}</h2><p>{copy.connectBody}</p></div>
  </section>
- <section class="af-status"><p class="eyebrow">One learning world, different ways in</p><h2>Words from reading.<br/>Practice in 2000nl.</h2><p>Pontix explores the reading side of the same idea behind <a href="/audiofilms/">AudioFilms</a>: meet language in context, get help understanding it, and return to useful words in <a href="/2000nl/">2000nl</a>.</p><p>It is one of our earliest experiments. The interface, integrations and public availability are still taking shape. We’ll share the work and decisions in the <a href="/blog/">journal</a>.</p></section>
+ <section class="af-status"><p class="eyebrow">{copy.connectedEyebrow}</p><h2>{copy.connectedTitleFirst}<br/>{copy.connectedTitleSecond}</h2><p>{copy.connectedFirst}<a href={productPath('audiofilms',locale)}>AudioFilms</a>{copy.connectedMiddle}<a href={productPath('2000nl',locale)}>2000nl</a>.</p><p>{copy.connectedLast}<a href="/blog/">{copy.journal}</a>.</p></section>
 </div>

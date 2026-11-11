@@ -1,19 +1,7 @@
 import {readFileSync, readdirSync, existsSync} from 'node:fs';
 import {join} from 'node:path';
-import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
-const review=JSON.parse(readFileSync('src/i18n/translation-review.json','utf8'));
-for(const [id,entry] of Object.entries(review)){
-  const source=readFileSync(join('src/i18n',entry.sourceFile));
-  const original=JSON.parse(source);
-  for(const [locale,translation] of Object.entries(entry.translations)){
-    const copy=JSON.parse(readFileSync(join('src/i18n',translation.file),'utf8'));
-    assert.deepEqual(Object.keys(copy).sort(),Object.keys(original).sort(),`${id}/${locale}: translation keys match source`);
-    assert.ok(Object.values(copy).every(value=>typeof value==='string'&&value.trim()),`${id}/${locale}: translated text is nonempty`);
-    assert.equal(translation.status,'reviewed',`${id}/${locale}: review before registering a route`);
-    assert.equal(translation.sourceHash,createHash('sha256').update(source).digest('hex'),`${id}/${locale}: English source changed; review translation and update its sourceHash`);
-  }
-}
+import './check-translations.mjs';
 const pages=[];
 function walk(dir){for(const f of readdirSync(dir,{withFileTypes:true})){const path=join(dir,f.name);if(f.isDirectory())walk(path);else if(path.endsWith('.html'))pages.push(path);}}
 walk('dist');
@@ -34,7 +22,23 @@ for(const path of pages){
    if(process.env.SITE_PREVIEW!=='true')assert.ok(sitemap.includes(`<loc>${url}</loc>`),`${url}: included in sitemap`);
  }
 }
-const ru=readFileSync('dist/ru/2000nl/index.html','utf8');
-assert.ok(ru.includes('data-locale="ru"')&&ru.includes('data-preview="true"')=== (process.env.SITE_PREVIEW==='true'), 'Russian form locale and preview isolation');
-assert.ok(ru.includes('hreflang="en"')&&ru.includes('hreflang="ru"'),'Russian landing has real language links');
-console.log('PASS: translation completeness/freshness, canonical, reciprocal hreflang, language routes and sitemap');
+const localeRegistry=JSON.parse(readFileSync('src/i18n/locales.json','utf8'));
+for(const [locale,config]of Object.entries(localeRegistry)){
+ for(const product of ['2000nl','audiofilms','pontix']){
+  const path=`dist${config.prefix}/${product}/index.html`;
+  const html=readFileSync(path,'utf8');
+  assert.ok(html.includes(`<html lang="${locale}"`),`${path}: page language`);
+  assert.ok(html.includes('data-language-switch'),`${path}: language selector`);
+  const self=new URL(`https://dilum.io${config.prefix}/${product}/`).href;
+  assert.ok(html.includes(`rel="canonical" href="${self}"`),`${path}: canonical`);
+  if(product==='2000nl'){
+   assert.ok(html.includes(`data-locale="${locale}"`),`${path}: form locale`);
+   assert.equal(html.includes('data-preview="true"'),process.env.SITE_PREVIEW==='true',`${path}: form preview isolation`);
+  }
+  // Product-to-product links keep the visitor's selected locale.
+  for(const peer of ['2000nl','audiofilms','pontix'].filter(p=>p!==product)){
+   if(html.includes(`href="/${peer}/"`))assert.equal(locale,'en',`${path}: untranslated cross-product link`);
+  }
+ }
+}
+console.log('PASS: all product locales, self-canonical, reciprocal hreflang, menus, cross-product links, forms and sitemap');

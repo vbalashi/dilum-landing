@@ -6,7 +6,341 @@
       "ru": {
         "file": "products/2000nl.ru.json",
         "status": "reviewed",
-        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107"
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "79c70e3a88ae1bcf758ea5089a454196aa184315a2944b938cbb245093dd88e2"
+      },
+      "nl": {
+        "file": "products/2000nl.nl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "6a066780af1d41756bd1d94cc263baae7a3cf6144712abdd61394f7e1cc56890"
+      },
+      "de": {
+        "file": "products/2000nl.de.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "ead20e76a50f30cc0a67b578941603b143848949f5eae9bcaf33e91251a4b55a"
+      },
+      "fr": {
+        "file": "products/2000nl.fr.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "a630d17a4f83540de21aef49cf45f3281dc41a2cea6234a01c84fbfda914eec3"
+      },
+      "es": {
+        "file": "products/2000nl.es.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "37ad739884709071357c0118adcab3b124b50b0b664272b0024c3a09acff93dc"
+      },
+      "pl": {
+        "file": "products/2000nl.pl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "05eae8b90065e205f55c16389b581eaaa3967a68190ed63e0b0417b207d8b18d"
+      },
+      "uk": {
+        "file": "products/2000nl.uk.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "8124e830094f0368655eed9af509b85b2ad9e7237bec0453fef89297356fdcda"
+      },
+      "it": {
+        "file": "products/2000nl.it.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "9103e855ab95038747c26d7a1c20fcdbafa636b9d74e96dfda25065cc7e783bf"
+      },
+      "pt": {
+        "file": "products/2000nl.pt.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "557fd8d8f7187f065072da98fa408c05bddaa802a3ef91846fcc7e0f1b8a3107",
+        "translationHash": "e1084e72d1cc20503bb8969dae24d788b2967b7ca82f94171aa501b765cebf5a"
+      }
+    }
+  },
+  "product.audiofilms": {
+    "sourceLocale": "en",
+    "sourceFile": "products/audiofilms.en.json",
+    "translations": {
+      "ru": {
+        "file": "products/audiofilms.ru.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "5f86424d334607af0463cc74de85dabd560bc3a787510c10d9feae6c470b97e3"
+      },
+      "nl": {
+        "file": "products/audiofilms.nl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "693327b756a5309d2187dfa6ecd4f3ae11336e90ecffb035d0bd303fa3a6c948"
+      },
+      "de": {
+        "file": "products/audiofilms.de.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "d75bea7b8133ec24cd3de62999ee3fb19a9e7a00377ebe86010687c3ac58534b"
+      },
+      "fr": {
+        "file": "products/audiofilms.fr.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "06fae454094078a0fd72f8796c368ae89078b3af975ee72094b748b71568e340"
+      },
+      "es": {
+        "file": "products/audiofilms.es.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "746ddf6177de135d03ba84dbc1bd58417754c8490799d5d848287f02caee7250"
+      },
+      "pl": {
+        "file": "products/audiofilms.pl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "7260fb3d9df8a6d2b94fb1280cd81c18a1cf71af16b36b000990e4ff6745cf44"
+      },
+      "uk": {
+        "file": "products/audiofilms.uk.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "2b781be714c9bfdc7109c54da9e6585cbb29fdeb14871501753782c9e7ed6d25"
+      },
+      "it": {
+        "file": "products/audiofilms.it.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "5de1fa135d8445d57ae2b119b675406b313d48bb9eedc2c388bd90d08a4c5059"
+      },
+      "pt": {
+        "file": "products/audiofilms.pt.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "e98c6c786fd502779f985bf81d6f93bad0e88ea4031b0f0beb7d69398cda4c27",
+        "translationHash": "13cd8487f1caba1e016e5989517952949d4c0e66a9225e3f07c4c604cde0f1f4"
+      }
+    }
+  },
+  "product.pontix": {
+    "sourceLocale": "en",
+    "sourceFile": "products/pontix.en.json",
+    "translations": {
+      "ru": {
+        "file": "products/pontix.ru.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "0fc6d9a0d83dcbb74ec7f2e1517402c1e75909de706fd64bcc05c18ccd5d6a83"
+      },
+      "nl": {
+        "file": "products/pontix.nl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "e85ef42d0c488dc3f848c1230bb8feb45019596b6ecf981cf6902d1f4a47c135"
+      },
+      "de": {
+        "file": "products/pontix.de.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "210c9833fd99f9f650b968b3642fdff2fa4695bd4d120080c4301b89c2065938"
+      },
+      "fr": {
+        "file": "products/pontix.fr.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "afdf1b009402f9ad48eca6671b66a10996203a927f662ab68e9b03601d51359c"
+      },
+      "es": {
+        "file": "products/pontix.es.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "aa8a689e69d32544fdf1e223581924df9c30e6424fc908a9e7e0f619eeb3daa2"
+      },
+      "pl": {
+        "file": "products/pontix.pl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "adf66800ecd80711edf405fb7b2a19b8b8cd8782bddd5585b01f0be5e59ceae5"
+      },
+      "uk": {
+        "file": "products/pontix.uk.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "0a4b095008a84197e6b96982e698b3233366f25d2d4b8477a2826d5c7d4d01d0"
+      },
+      "it": {
+        "file": "products/pontix.it.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "858954527e2c6340ef7ee958cbbe317437e0d3164531c7a20d8cc817c4936214"
+      },
+      "pt": {
+        "file": "products/pontix.pt.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "6f51551df614c69cd2b272c69bbbac3fe4d4bf1ab6d073c1e06d77be395fc611",
+        "translationHash": "4fbb5f84bf0ceec6333355cc4361effa34dfaeba0afe44167663ad83e012d74b"
+      }
+    }
+  },
+  "ui.shell": {
+    "sourceLocale": "en",
+    "sourceFile": "ui/shell.en.json",
+    "translations": {
+      "ru": {
+        "file": "ui/shell.ru.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "bb4f7efabf53f52f856a0fe1e329b8cbafc5b8b98906668202c31a2abe6e4028"
+      },
+      "nl": {
+        "file": "ui/shell.nl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "77ca8f8fbe0375fcf25b48bdb87e987646cc974d871db3c675adeca21347e096"
+      },
+      "de": {
+        "file": "ui/shell.de.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "3797e9c066eef41c4a5571ac2568aae1ece115377bb2c11f315641320275ed9f"
+      },
+      "fr": {
+        "file": "ui/shell.fr.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "1c02dac577002f4a5a3ec4a428500191c6d6a9b82ee3d4418542bf95497be810"
+      },
+      "es": {
+        "file": "ui/shell.es.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "62d61b68769d6358712ea9b3426e3880ce3818a9491f2fe342845629c35f37d4"
+      },
+      "pl": {
+        "file": "ui/shell.pl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "1ebfec6e6855dba057aaa9c0b36d74275c7443ebd9fc7f96ba83038b0ff0834b"
+      },
+      "uk": {
+        "file": "ui/shell.uk.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "14ed7be3850ecaec6bf3a77dd506509888b941f704f2495079de2ab14b64dbfc"
+      },
+      "it": {
+        "file": "ui/shell.it.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "366e1d18e5467b75beaf0b5a2ec2844f87f33d648b62f4d30d0cdd384389078e"
+      },
+      "pt": {
+        "file": "ui/shell.pt.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "21be367e9218c89d1500aa403427a4c53d611cd19ff6c3a21f6213e1fa4ba034",
+        "translationHash": "715e6ad8fdbc7950ab4e4b9d612467c2a5f8e2fcbe7d70600d70ca55f8ee64a6"
+      }
+    }
+  },
+  "ui.waitlist": {
+    "sourceLocale": "en",
+    "sourceFile": "ui/waitlist.en.json",
+    "translations": {
+      "ru": {
+        "file": "ui/waitlist.ru.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "ec8756c9c7dd995af3c67d244ff6d173bedf7a09b7fa46410195af3fbeedd17c"
+      },
+      "nl": {
+        "file": "ui/waitlist.nl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "bc6dfa8f722c783963759a71c203f502b8a6761c9af235653400e9d24ea1ee02"
+      },
+      "de": {
+        "file": "ui/waitlist.de.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "8f31c60be2f570e088985c8c9f6f2b80437950bcacc92028c2f9727d5960045c"
+      },
+      "fr": {
+        "file": "ui/waitlist.fr.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "f2b37fe4adb426fd89ec0475eb65a68bcf0e8cf01f7d2c99f31da6a68d72b61d"
+      },
+      "es": {
+        "file": "ui/waitlist.es.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "393e36a50ef25386ae2bded832170e5d2dc09c851bce67f2ff821e785b2aac10"
+      },
+      "pl": {
+        "file": "ui/waitlist.pl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "342a613d78b1d9adbda623582f58d8c979950477c7702fa74b6703bbb806c6b7"
+      },
+      "uk": {
+        "file": "ui/waitlist.uk.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "71e6fd5bc0de8cd23b65c55cfe6df474a3444b488cefffdafadeb485bdc7ee10"
+      },
+      "it": {
+        "file": "ui/waitlist.it.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "2cc2c896532e88f6373d7f98a7cb75f45180de63e4b8577f2cfc4209e39640cf"
+      },
+      "pt": {
+        "file": "ui/waitlist.pt.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b14c7bf9ca0243b795dafbfbfb365a5f563d07a2a6b54e33d57d62d8beddff6c",
+        "translationHash": "c90b4a17d99a4f3820b3eed7690d3de7752673b32b6a43b452d0c25f22db93c6"
       }
     }
   }

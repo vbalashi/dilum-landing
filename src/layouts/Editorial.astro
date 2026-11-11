@@ -21,7 +21,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
 const path = Astro.url.pathname;
 const navigation = [
-  {label:text.products,url:'/products/',active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)||path.startsWith('/ru/2000nl/')},
+  {label:text.products,url:'/products/',active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)||/^\/[a-z]{2}\/(2000nl|audiofilms|pontix)\/$/.test(path)},
   {label:text.journal,url:'/blog/',active:path.startsWith('/blog/')},
   {label:text.people,url:'/authors/',active:path.startsWith('/authors/')},
   {label:text.contact,url:'/contact/',active:path.startsWith('/contact/')},
@@ -54,12 +54,12 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 <a class="skip" href="#main">{text.skip}</a>
 <div class="header-space" aria-hidden="true"></div>
 <div class="site-header" transition:persist={`studio-header-${locale}-${translationKey??'none'}`}>
-{preview && <div class="preview-banner">{privatePreview?'Local editorial preview':'Website preview'} <span aria-hidden="true">·</span> {privatePreview?'Unpublished drafts — local only':'Published content only'}</div>}
+{preview && <div class="preview-banner">{privatePreview?text.previewPrivate:text.previewPublic} <span aria-hidden="true">·</span> {privatePreview?text.privateOnly:text.publishedOnly}</div>}
 <header class="masthead">
   <a class="brand" href="/" aria-label={text.home}>dilum<span>io</span><small>{text.brand}</small></a>
   <nav aria-label={text.navigation}>{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}{locale!=='en'&&<span class="nav-language" lang="en" title={text.english}>EN</span>}</a>)}</nav>
   <LanguageSwitch pageId={translationKey} locale={locale}/>
-  <button class="theme-cycle" type="button" data-theme-cycle aria-label={locale==='ru'?'Тема: системная. Переключить: светлая':'Theme: System. Switch to light theme'} title={locale==='ru'?'Тема: системная. Переключить: светлая':'Theme: System. Switch to light theme'}>
+  <button class="theme-cycle" type="button" data-theme-cycle aria-label={text.themePrompt.replace('{current}',text.themeSystem).replace('{next}',text.themeLight)} title={text.themePrompt.replace('{current}',text.themeSystem).replace('{next}',text.themeLight)}>
     {themes.map(theme=><span data-theme-icon={theme.id} aria-hidden="true" set:html={theme.icon}/>)}
   </button>
 </header>
