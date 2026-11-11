@@ -111,20 +111,6 @@
   overflow:hidden;
   box-shadow:0 18px 50px #29203720
 }
-.nl-showcase figcaption {
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  color:var(--muted);
-  font:400 12px/1.7 var(--sans)
-}
-.nl-showcase figcaption span {
-  color:var(--ink)
-}
 .nl-steps {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -270,17 +256,8 @@
   width:66%;
   bottom:50px
 }
-.nl-showcase figcaption {
-  position:static;
-  margin-top:90px;
-  display:block;
-  font-size:11px
-}
-.nl-showcase figcaption span {
-  display:block
-}
 .nl-showcase {
-  padding-bottom:0
+  padding-bottom:90px
 }
 .nl-steps {
   grid-template-columns:1fr;
