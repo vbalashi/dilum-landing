@@ -4,7 +4,6 @@ import '@fontsource-variable/literata';
 import '@fontsource-variable/manrope';
 import '../styles/editorial.css';
 import { preview, privatePreview } from '../lib/content';
-import { legalMarkup } from '../lib/studio';
 import sun from 'lucide-static/icons/sun.svg?raw';
 import moon from 'lucide-static/icons/moon.svg?raw';
 import monitor from 'lucide-static/icons/monitor.svg?raw';
@@ -54,9 +53,9 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 </header>
 </div>
 <main id="main"><slot/></main>
-<footer class:list={["site-footer", {"contact-footer":path==='/contact/'}]} id="contact">
-  <div class="footer-top">{path!=='/contact/'&&<div><p class="eyebrow">Get in touch</p><h2>Let’s talk.</h2><a class="contact-link" href="mailto:contact@dilum.io">contact@dilum.io ↗</a></div>}<div class="business-details"><p class="eyebrow">Dilum Labs · Netherlands</p><div set:html={legalMarkup}/></div></div>
-  <div class="footer-bottom"><a class="brand footer-brand" href="/">dilum<span>io</span></a><p>© 2026 Dilum Labs</p><nav aria-label="Footer navigation"><a href="/rss.xml">RSS</a><a href="https://github.com/vbalashi">GitHub</a><a href="https://www.linkedin.com/in/khrustalev/">LinkedIn</a></nav></div>
+<footer class="site-footer" id="contact">
+  <div class="footer-contact-row"><p>Dilum Labs · Rotterdam</p><a class="contact-link" href="mailto:contact@dilum.io">contact@dilum.io ↗</a></div>
+  <div class="footer-bottom"><p>© 2026 Dilum Labs</p><nav aria-label="Footer navigation"><a href="/contact/">Contact</a><a href="/contact/#company-details">Company details</a><a href="https://www.linkedin.com/in/khrustalev/">LinkedIn</a><a href="https://github.com/vbalashi">GitHub</a><a href="/rss.xml">RSS</a></nav></div>
 </footer>
 <script>import '../scripts/navigation';</script>
 </body>
