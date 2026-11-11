@@ -2,7 +2,7 @@
 import LanguageSwitch from '../components/LanguageSwitch.astro';
 import {isLocale} from '../i18n/locales';
 import {ui} from '../i18n/ui';
-import {pageAlternates,defaultPagePath,type PageId} from '../i18n/pages';
+import {pageAlternates,defaultPagePath,productsPath,type PageId} from '../i18n/pages';
 import { ClientRouter } from 'astro:transitions';
 import '@fontsource-variable/literata';
 import '@fontsource-variable/manrope';
@@ -21,7 +21,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
 const path = Astro.url.pathname;
 const navigation = [
-  {label:text.products,url:'/products/',active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)||/^\/[a-z]{2}\/(2000nl|audiofilms|pontix)\/$/.test(path)},
+  {label:text.products,url:productsPath(locale),translated:true,active:path.startsWith('/products/')||['/2000nl/','/audiofilms/','/pontix/'].includes(path)||/^\/[a-z]{2}\/(products|2000nl|audiofilms|pontix)\/$/.test(path)},
   {label:text.journal,url:'/blog/',active:path.startsWith('/blog/')},
   {label:text.people,url:'/authors/',active:path.startsWith('/authors/')},
   {label:text.contact,url:'/contact/',active:path.startsWith('/contact/')},
@@ -57,7 +57,7 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 {preview && <div class="preview-banner">{privatePreview?text.previewPrivate:text.previewPublic} <span aria-hidden="true">·</span> {privatePreview?text.privateOnly:text.publishedOnly}</div>}
 <header class="masthead">
   <a class="brand" href="/" aria-label={text.home}>dilum<span>io</span><small>{text.brand}</small></a>
-  <nav aria-label={text.navigation}>{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}{locale!=='en'&&<span class="nav-language" lang="en" title={text.english}>EN</span>}</a>)}</nav>
+  <nav aria-label={text.navigation}>{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}{locale!=='en'&&!('translated' in item)&&<span class="nav-language" lang="en" title={text.english}>EN</span>}</a>)}</nav>
   <LanguageSwitch pageId={translationKey} locale={locale}/>
   <button class="theme-cycle" type="button" data-theme-cycle aria-label={text.themePrompt.replace('{current}',text.themeSystem).replace('{next}',text.themeLight)} title={text.themePrompt.replace('{current}',text.themeSystem).replace('{next}',text.themeLight)}>
     {themes.map(theme=><span data-theme-icon={theme.id} aria-hidden="true" set:html={theme.icon}/>)}

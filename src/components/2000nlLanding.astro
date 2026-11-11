@@ -1,13 +1,14 @@
 ---
+import {ui} from '../i18n/ui';
 import Waitlist from './Waitlist.astro';
 import { nlCopy } from '../i18n/products/2000nl';
-import {productPath} from '../i18n/pages';
+import {productPath,productsPath} from '../i18n/pages';
 import type { Locale } from '../i18n/locales';
 const {locale='en'} = Astro.props as {locale?:Locale};
 const copy = nlCopy[locale];
 ---
 <div class="nl-landing">
- <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href="/products/">{copy.products}</a><span aria-hidden="true">/</span><span aria-current="page">2000nl</span></nav>
+ <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href={productsPath(locale)}>{ui[locale].products}</a><span aria-hidden="true">/</span><span aria-current="page">2000nl</span></nav>
  <header class="nl-hero">
   <p class="nl-wordmark">2000<span>nl</span><small>{copy.tagline}</small></p>
   <p class="eyebrow">{copy.status}</p>

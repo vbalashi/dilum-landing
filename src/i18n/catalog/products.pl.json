@@ -1,0 +1,16 @@
+{
+  "metaTitle": "Produkty",
+  "metaDescription": "Produkty cyfrowe, które tworzymy w Dilum Labs.",
+  "heading": "Nasze produkty",
+  "intro": "Zaczynamy od nauki języków. Te powiązane projekty pomagają poznawać słownictwo poprzez ćwiczenia, filmy i teksty spotykane na co dzień.",
+  "explore": "Poznaj {product}",
+  "nlKind": "Ćwiczenie słownictwa",
+  "nlStatus": "Wczesny dostęp · najpierw niderlandzki",
+  "nlDescription": "Gotowe materiały słownikowe, elastyczne ćwiczenia i powtórki w odstępach. Ćwicz słownictwo bez samodzielnego tworzenia każdej fiszki.",
+  "audioKind": "Ćwiczenia z filmami",
+  "audioStatus": "W przygotowaniu",
+  "audioDescription": "Ćwicz zwroty z filmów, powtarzaj je i sprawdzaj nieznane słowa bez gubienia miejsca odtwarzania.",
+  "pontixKind": "Tłumaczenie w kontekście",
+  "pontixStatus": "W przygotowaniu",
+  "pontixDescription": "Wczesna koncepcja rozszerzenia przeglądarki pomagającego rozumieć słowa podczas czytania. Połączenie z ćwiczeniami słownictwa jest w przygotowaniu."
+}

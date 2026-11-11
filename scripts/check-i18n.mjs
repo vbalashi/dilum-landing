@@ -24,6 +24,10 @@ for(const path of pages){
 }
 const localeRegistry=JSON.parse(readFileSync('src/i18n/locales.json','utf8'));
 for(const [locale,config]of Object.entries(localeRegistry)){
+ const catalogPath=`dist${config.prefix}/products/index.html`;
+ const catalog=readFileSync(catalogPath,'utf8');
+ assert.ok(catalog.includes(`<html lang="${locale}"`),`${catalogPath}: catalog language`);
+ assert.ok(catalog.includes('data-language-switch'),`${catalogPath}: catalog language selector`);
  for(const product of ['2000nl','audiofilms','pontix']){
   const path=`dist${config.prefix}/${product}/index.html`;
   const html=readFileSync(path,'utf8');
@@ -34,6 +38,13 @@ for(const [locale,config]of Object.entries(localeRegistry)){
   if(product==='2000nl'){
    assert.ok(html.includes(`data-locale="${locale}"`),`${path}: form locale`);
    assert.equal(html.includes('data-preview="true"'),process.env.SITE_PREVIEW==='true',`${path}: form preview isolation`);
+  }
+  const catalogUrl=`${config.prefix}/products/`;
+  assert.ok(html.includes(`href="${catalogUrl}"`),`${path}: localized catalog breadcrumb/menu`);
+  assert.ok(catalog.includes(`href="${config.prefix}/${product}/"`),`${catalogPath}: localized ${product} link`);
+  if(locale!=='en'){
+   assert.ok(!html.includes('href="/products/"'),`${path}: no English catalog links`);
+   assert.ok(!catalog.includes(`href="/${product}/"`),`${catalogPath}: no English product links`);
   }
   // Product-to-product links keep the visitor's selected locale.
   for(const peer of ['2000nl','audiofilms','pontix'].filter(p=>p!==product)){

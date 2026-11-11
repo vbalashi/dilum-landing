@@ -343,5 +343,74 @@
         "translationHash": "c90b4a17d99a4f3820b3eed7690d3de7752673b32b6a43b452d0c25f22db93c6"
       }
     }
+  },
+  "page.products": {
+    "sourceLocale": "en",
+    "sourceFile": "catalog/products.en.json",
+    "translations": {
+      "ru": {
+        "file": "catalog/products.ru.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "75e59c069cc3ee74103966449f93e098eadd8d2576bc9e7a9cfb7e889e5abc03"
+      },
+      "nl": {
+        "file": "catalog/products.nl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "c06457b54c5771ff7965249f0ee1e9aa8e72b123110f19bc343c2261c4536e34"
+      },
+      "de": {
+        "file": "catalog/products.de.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "6f76555785a23640b2b574ad00c11dce96ab3dfd632486ad2a0c420e97f58c2c"
+      },
+      "fr": {
+        "file": "catalog/products.fr.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "e2209f96266bd24504415b42245e4409d9c72c455cce035b90a12d8a7c79397b"
+      },
+      "es": {
+        "file": "catalog/products.es.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "75ff756138a54fcfe3fa5c4ae30b016bb1bf05df532c8b047eb963f06806c5b0"
+      },
+      "pl": {
+        "file": "catalog/products.pl.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "37ad8db48e38d448353c900145f73355ccae89f270c2cb6293379e4fe8450abd"
+      },
+      "uk": {
+        "file": "catalog/products.uk.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "bafeda35bc3d9a7ddfb65fd3b062ee1607f9bfda39eabbf8a434506898415a35"
+      },
+      "it": {
+        "file": "catalog/products.it.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "bad3338b205c1088715913e7816a449028cb1b950a19a90d9e9b8bd557f7124d"
+      },
+      "pt": {
+        "file": "catalog/products.pt.json",
+        "status": "reviewed",
+        "reviewer": "agent-assisted copy review; no native-speaker certification",
+        "sourceHash": "b4fa26e902c71ca2251a9f299dbbbe6c0a7a30de77eb3390e554243b4303b01e",
+        "translationHash": "f7601c89eef8f1ac2bfd92896353bad3be22641d8c9479ca75577708b90fc4da"
+      }
+    }
   }
 }

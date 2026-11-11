@@ -1,0 +1,16 @@
+{
+  "metaTitle": "Produits",
+  "metaDescription": "Les produits numériques que nous développons chez Dilum Labs.",
+  "heading": "Nos produits",
+  "intro": "Nous commençons par l’apprentissage des langues. Ces projets complémentaires abordent le vocabulaire par la pratique, la vidéo et les textes du quotidien.",
+  "explore": "Découvrir {product}",
+  "nlKind": "Pratique du vocabulaire",
+  "nlStatus": "Accès anticipé · le néerlandais d’abord",
+  "nlDescription": "Des contenus de dictionnaire préparés, des exercices variés et la répétition espacée. Pratiquez le vocabulaire sans créer chaque fiche vous-même.",
+  "audioKind": "Pratiquer avec des vidéos",
+  "audioStatus": "En développement",
+  "audioDescription": "Travaillez les phrases des vidéos, répétez-les et cherchez les mots inconnus sans perdre le fil.",
+  "pontixKind": "Traduction en contexte",
+  "pontixStatus": "En développement",
+  "pontixDescription": "Un premier concept d’extension de navigateur pour comprendre les mots pendant la lecture. La connexion à la pratique du vocabulaire est en développement."
+}

@@ -1,0 +1,16 @@
+{
+  "metaTitle": "Producten",
+  "metaDescription": "De digitale producten die we bij Dilum Labs ontwikkelen.",
+  "heading": "Onze producten",
+  "intro": "We beginnen met het leren van talen. Deze samenhangende projecten helpen je woorden te leren door te oefenen, video te bekijken en te lezen.",
+  "explore": "Ontdek {product}",
+  "nlKind": "Woordenschat oefenen",
+  "nlStatus": "Vroege toegang · eerst Nederlands",
+  "nlDescription": "Voorbereid woordenboekmateriaal, flexibele oefeningen en gespreide herhaling. Gericht woorden oefenen zonder elk kaartje zelf te maken.",
+  "audioKind": "Oefenen met video",
+  "audioStatus": "In ontwikkeling",
+  "audioDescription": "Oefen zinnen uit video’s, herhaal ze en zoek onbekende woorden op zonder je plek kwijt te raken.",
+  "pontixKind": "Vertalen in context",
+  "pontixStatus": "In ontwikkeling",
+  "pontixDescription": "Een eerste concept voor een browserextensie die helpt woorden tijdens het lezen te begrijpen. De koppeling met woordenschatoefeningen is nog in ontwikkeling."
+}

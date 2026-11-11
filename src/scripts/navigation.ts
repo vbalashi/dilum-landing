@@ -32,7 +32,7 @@ function updateHeader() {
 function updatePage() {
   restoreTheme();
   document.querySelectorAll<HTMLAnchorElement>('.masthead nav a').forEach(link => {
-    const active = location.pathname.startsWith(new URL(link.href).pathname) || (link.pathname === '/products/' && /^\/(?:[a-z]{2}\/)?(?:2000nl|audiofilms|pontix)\/$/.test(location.pathname));
+    const active = location.pathname.startsWith(new URL(link.href).pathname) || (/^\/(?:[a-z]{2}\/)?products\/$/.test(link.pathname) && /^\/(?:[a-z]{2}\/)?(?:2000nl|audiofilms|pontix)\/$/.test(location.pathname));
     if (active) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });

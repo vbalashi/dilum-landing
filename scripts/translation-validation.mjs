@@ -25,7 +25,7 @@ export function validateTranslation(sourceText,targetText,review,label){
 export function checkTranslationRegistry(root='src/i18n'){
  const locales=JSON.parse(readFileSync(join(root,'locales.json'),'utf8'));
  const registry=JSON.parse(readFileSync(join(root,'translation-review.json'),'utf8'));
- const required=['product.2000nl','product.audiofilms','product.pontix','ui.shell','ui.waitlist'];
+ const required=['page.products','product.2000nl','product.audiofilms','product.pontix','ui.shell','ui.waitlist'];
  for(const id of required)assert.ok(registry[id],`Missing translation review group: ${id}`);
  let count=0;
  for(const [id,entry]of Object.entries(registry)){

@@ -1,13 +1,13 @@
 ---
 import {productCopy} from '../i18n/products';
 import {ui} from '../i18n/ui';
-import {productPath} from '../i18n/pages';
+import {productPath,productsPath} from '../i18n/pages';
 import type {Locale} from '../i18n/locales';
 const {locale='en'}=Astro.props as {locale?:Locale};
 const copy=productCopy['audiofilms'][locale];
 ---
 <div class="nl-landing af-landing">
- <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href="/products/">{ui[locale].products}{locale!=='en'&&' (EN)'}</a><span aria-hidden="true">/</span><span aria-current="page">AudioFilms</span></nav>
+ <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href={productsPath(locale)}>{ui[locale].products}</a><span aria-hidden="true">/</span><span aria-current="page">AudioFilms</span></nav>
  <header class="nl-hero">
   <p class="nl-wordmark af-wordmark">Audio<span>Films</span><small>{copy.tagline}</small></p>
   <p class="eyebrow">{copy.status}</p>

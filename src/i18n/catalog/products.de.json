@@ -1,0 +1,16 @@
+{
+  "metaTitle": "Produkte",
+  "metaDescription": "Die digitalen Produkte, die wir bei Dilum Labs entwickeln.",
+  "heading": "Unsere Produkte",
+  "intro": "Wir beginnen mit dem Sprachenlernen. Diese verbundenen Projekte erschließen Wortschatz durch Übungen, Videos und Texte aus dem Alltag.",
+  "explore": "{product} entdecken",
+  "nlKind": "Wortschatz üben",
+  "nlStatus": "Frühzugang · zunächst Niederländisch",
+  "nlDescription": "Vorbereitete Wörterbuchinhalte, flexible Übungen und verteiltes Wiederholen. Gezielt Vokabeln üben, ohne jede Karte selbst erstellen zu müssen.",
+  "audioKind": "Mit Videos üben",
+  "audioStatus": "In Entwicklung",
+  "audioDescription": "Sätze aus Videos üben, wiederholen und unbekannte Wörter nachschlagen, ohne die Stelle zu verlieren.",
+  "pontixKind": "Übersetzung im Kontext",
+  "pontixStatus": "In Entwicklung",
+  "pontixDescription": "Ein frühes Konzept für eine Browsererweiterung, die beim Lesen Wörter verständlich macht. Die Anbindung an Wortschatzübungen wird noch entwickelt."
+}
