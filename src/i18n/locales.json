@@ -1,0 +1,12 @@
+{
+ "en":{"label":"English","short":"EN","prefix":""},
+ "ru":{"label":"Русский","short":"RU","prefix":"/ru"},
+ "nl":{"label":"Nederlands","short":"NL","prefix":"/nl"},
+ "de":{"label":"Deutsch","short":"DE","prefix":"/de"},
+ "fr":{"label":"Français","short":"FR","prefix":"/fr"},
+ "es":{"label":"Español","short":"ES","prefix":"/es"},
+ "pl":{"label":"Polski","short":"PL","prefix":"/pl"},
+ "uk":{"label":"Українська","short":"UK","prefix":"/uk"},
+ "it":{"label":"Italiano","short":"IT","prefix":"/it"},
+ "pt":{"label":"Português","short":"PT","prefix":"/pt"}
+}

@@ -1,29 +1,37 @@
+---
+import {productCopy} from '../i18n/products';
+import {ui} from '../i18n/ui';
+import {productPath,productsPath} from '../i18n/pages';
+import type {Locale} from '../i18n/locales';
+const {locale='en'}=Astro.props as {locale?:Locale};
+const copy=productCopy['audiofilms'][locale];
+---
 <div class="nl-landing af-landing">
- <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">AudioFilms</span></nav>
+ <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href={productsPath(locale)}>{ui[locale].products}</a><span aria-hidden="true">/</span><span aria-current="page">AudioFilms</span></nav>
  <header class="nl-hero">
-  <p class="nl-wordmark af-wordmark">Audio<span>Films</span><small>YouTube shadowing · A Dilum project</small></p>
-  <p class="eyebrow">In development · Working test prototype</p>
-  <h1>Hear it.<br/><em>Make it your own.</em></h1>
-  <p class="nl-lead">Turn a video you want to watch into language you want to use. Repeat a phrase, check its meaning, and keep useful words for practice in 2000nl.</p>
-  <div class="nl-actions"><a class="nl-button" href="#af-preview">Explore the concept <span aria-hidden="true">↓</span></a><a class="nl-secondary" href="mailto:contact@dilum.io?subject=AudioFilms%20early%20testing">Ask about early testing ↗</a></div>
-  <p class="nl-access">A Chrome extension prototype running on YouTube. Not yet available as a public release.</p>
+  <p class="nl-wordmark af-wordmark">Audio<span>Films</span><small>{copy.tagline}</small></p>
+  <p class="eyebrow">{copy.status}</p>
+  <h1>{copy.heroFirst}<br/><em>{copy.heroSecond}</em></h1>
+  <p class="nl-lead">{copy.lead}</p>
+  <div class="nl-actions"><a class="nl-button" href="#af-preview">{copy.explore}<span aria-hidden="true">↓</span></a><a class="nl-secondary" href="mailto:contact@dilum.io?subject=AudioFilms%20early%20testing">{copy.testingCTA}</a></div>
+  <p class="nl-access">{copy.access}</p>
  </header>
  <figure class="af-workspace" id="af-preview">
-  <img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" fetchpriority="high" alt="AudioFilms prototype on YouTube, with a Dutch video, phrase replay controls and dictionary cards for ziekenhuis, including Dilum Nederlands."/>
-  <figcaption>Working prototype on YouTube · Video: <a href="https://www.youtube.com/watch?v=W2QGZdlXuBg">LUBACH</a>. AudioFilms is an independent project.</figcaption>
+  <img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" fetchpriority="high" alt={copy.workspaceAlt}/>
+  <figcaption>{copy.captionFirst}<a href="https://www.youtube.com/watch?v=W2QGZdlXuBg">LUBACH</a>{copy.captionLast}</figcaption>
  </figure>
- <section class="nl-steps" aria-label="From watching to learning">
-  <div><p class="eyebrow">01 · Listen & repeat</p><h2>Stay with a phrase.</h2><p>Hear real speech, replay a phrase and say it back. Shadowing gives you a small, repeatable moment to practise pronunciation and rhythm.</p></div>
-  <div><p class="eyebrow">02 · Understand</p><h2>Keep the meaning close.</h2><p>Show a translation when you need it. Click a word in the phrase to explore its dictionary meaning and examples without leaving the video.</p></div>
-  <div><p class="eyebrow">03 · Keep it</p><h2>Take a word with you.</h2><p>With a connected 2000nl account, start learning a useful word from its card. Return to it later in your vocabulary practice.</p></div>
+ <section class="nl-steps" aria-label={copy.stepsLabel}>
+  <div><p class="eyebrow">{copy.listenStep}</p><h2>{copy.listenTitle}</h2><p>{copy.listenBody}</p></div>
+  <div><p class="eyebrow">{copy.understandStep}</p><h2>{copy.understandTitle}</h2><p>{copy.understandBody}</p></div>
+  <div><p class="eyebrow">{copy.keepStep}</p><h2>{copy.keepTitle}</h2><p>{copy.keepBody}</p></div>
  </section>
  <section class="af-phrase-feature">
-  <div class="nl-feature-copy"><p class="eyebrow">A little less scrubbing. A little more speaking.</p><h2>The phrase is<br/>your practice unit.</h2><p>Move back, repeat, or go forward. Hide the original when you want to test yourself, and reveal it when you need support.</p><p>The prototype explores Shadow and Recall modes, phrase translation and adjustable playback speed.</p></div>
-  <figure class="af-ribbon-shot"><img src="/images/audiofilms/phrase-ribbon.jpg" width="1002" height="208" loading="lazy" alt="AudioFilms phrase ribbon with clickable Dutch words, Shadow and Recall modes, Previous, Repeat and Next buttons, and translation controls."/></figure>
+  <div class="nl-feature-copy"><p class="eyebrow">{copy.phraseEyebrow}</p><h2>{copy.phraseTitleFirst}<br/>{copy.phraseTitleSecond}</h2><p>{copy.phraseBody}</p><p>{copy.phraseMore}</p></div>
+  <figure class="af-ribbon-shot"><img src="/images/audiofilms/phrase-ribbon.jpg" width="1002" height="208" loading="lazy" alt={copy.ribbonAlt}/></figure>
  </section>
  <section class="nl-feature af-dictionary-feature">
-  <div class="nl-feature-copy"><p class="eyebrow">Connected to 2000nl</p><h2>From a word in a video<br/>to a word you know.</h2><p>The dictionary card is part of the same vocabulary world as <a href="/2000nl/">2000nl</a>. Read a definition, see an example, and choose to learn the word.</p><p>Our own Dutch learner’s dictionary, Dilum Nederlands, is already connected in the test prototype.</p><a class="nl-secondary" href="/2000nl/">Explore vocabulary practice in 2000nl ↗</a></div>
-  <figure class="af-dictionary-shot"><img src="/images/audiofilms/dictionary-lookup.jpg" width="435" height="285" loading="lazy" alt="The Dilum Nederlands card for het ziekenhuis in AudioFilms, with a definition, example sentence and Start Learning button."/></figure>
+  <div class="nl-feature-copy"><p class="eyebrow">{copy.dictionaryEyebrow}</p><h2>{copy.dictionaryTitleFirst}<br/>{copy.dictionaryTitleSecond}</h2><p>{copy.dictionaryFirst}<a href={productPath('2000nl',locale)}>2000nl</a>{copy.dictionaryLast}</p><p>{copy.dictionaryMore}</p><a class="nl-secondary" href={productPath('2000nl',locale)}>{copy.dictionaryLink}</a></div>
+  <figure class="af-dictionary-shot"><img src="/images/audiofilms/dictionary-lookup.jpg" width="435" height="285" loading="lazy" alt={copy.dictionaryAlt}/></figure>
  </section>
- <section class="af-status"><p class="eyebrow">Where the project stands</p><h2>A working idea.<br/>Still taking shape.</h2><p>This is an experimental prototype, connected to 2000nl for testing. Playback, subtitles, translations and the interface are still being refined. It is not a finished product or a public extension-store release.</p><p>Interested in trying it or helping shape it? <a href="mailto:contact@dilum.io?subject=AudioFilms%20early%20testing">Get in touch about early testing ↗</a></p></section>
+ <section class="af-status"><p class="eyebrow">{copy.statusEyebrow}</p><h2>{copy.statusTitleFirst}<br/>{copy.statusTitleSecond}</h2><p>{copy.statusBody}</p><p>{copy.statusMore}<a href="mailto:contact@dilum.io?subject=AudioFilms%20early%20testing">{copy.statusContact}</a></p></section>
 </div>
