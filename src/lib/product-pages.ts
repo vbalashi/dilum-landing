@@ -21,11 +21,11 @@ export const productPages = {
  },
  pontix:{
   headline:'Keep the words you encounter.',
-  intro:'An early browser-extension project for looking up words while reading and connecting useful discoveries to vocabulary practice.',
+  intro:'An early browser-extension concept for selected-text translation while reading, with a connection to 2000nl vocabulary practice in development.',
   sections:[
    ['Look up a word in context','The aim is to reduce the interruption between encountering a word and understanding it.'],
-   ['A connected vocabulary','Pontix is a client of the shared dictionary platform. The extension is in alpha; public availability and exact supported workflows are still being prepared.'],
+   ['A connected vocabulary','The direction is to connect reading with the shared dictionary platform. The extension and its integrations are in development.'],
   ],
-  access:'Pontix is in alpha. Contact us about the project; a public extension-store listing is not claimed here.',
+  access:'Pontix is in development. Contact us about the project; a public extension-store listing is not claimed here.',
  },
 } as const;

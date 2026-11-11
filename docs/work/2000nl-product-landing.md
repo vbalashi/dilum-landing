@@ -92,3 +92,24 @@ AudioFilms review-ready receipt: implementation
 and content checks. PR #8 title/body now cover both connected product pages.
 Scoped changes pushed, clean tree; no merge or production deploy. Preview left
 open at http://localhost:4326/audiofilms/#af-preview . Ownership retained for review.
+
+## Resume 2026-11-11: Pontix and contact-link inspection
+
+Clean branch/worktrees rechecked; main AGENTS.md still preserved. Scope expanded
+to src/components/PontixLanding.astro, src/styles/pontix.css, src/lib/content.ts,
+src/lib/product-pages.ts, existing product route and public/images/pontix/.
+Pontix source found read-only at /Users/khrustal/dev/translate-extension; original
+icon/side-panel source retained, no archived screenshots found and no installed
+Pontix in the current Chrome profile. Do not install or fake a running screenshot.
+Describe concept/in-development status and planned 2000nl connection honestly.
+Contact inspection: source mailto is contact@dilum.io. Live /contact/ HTML already
+uses Cloudflare email-protection links/data-cfemail and email-decode.min.js, with
+no plain mailto addresses. MX points to Cloudflare routing; Gmail destination and
+mailbox filtering configuration not inspected. No mail/security settings changed.
+
+Pontix outcome: concise concept page using the surviving original icon, no
+fabricated screenshot. Status in product catalogue changed Alpha -> In development;
+copy no longer implies the 2000nl connection is already delivered. Preview checked
+in light/dark at the current narrow width: icon loads, no horizontal overflow.
+Contact address unchanged; live Cloudflare protection verified, no mail sent or
+email/security configuration changed. All source-project work remains read-only.

@@ -15,7 +15,7 @@ export const authors = [
 export const products = [
   {slug:'2000nl',name:'2000 NL',kind:'Vocabulary practice',status:'Early access · Dutch first',description:'Prepared dictionary content, flexible exercises, and spaced repetition. A focused way to practise vocabulary without making every card yourself.',detail:'Access is currently by invitation. The first learning dictionary is Dutch; other languages and connected workflows are being developed separately.',url:'https://2000.dilum.io/',cta:'Open 2000 NL'},
   {slug:'audiofilms',name:'AudioFilms',kind:'Practice with video',status:'In development',description:'Work with phrases in video, repeat them, and look up unfamiliar words without losing your place.',detail:'A connected video-practice project. Public access and the exact available features will be announced separately.',url:null,cta:null},
-  {slug:'pontix',name:'Pontix',kind:'Translation in context',status:'Alpha',description:'A browser extension for looking up words where you encounter them, connected to the vocabulary you practise.',detail:'An early-stage connected client. It is not presented here as a finished public release.',url:null,cta:null},
+  {slug:'pontix',name:'Pontix',kind:'Translation in context',status:'In development',description:'An early browser-extension concept for understanding words as you read, with vocabulary-practice connections in development.',detail:'An early reading and translation experiment. The interface and connection to 2000nl are still in development.',url:null,cta:null},
 ];
 export async function visibleArticles() {
   const entries = await getCollection('articles');
