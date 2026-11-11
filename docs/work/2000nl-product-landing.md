@@ -37,3 +37,12 @@ anchor navigation, and preview form submission (no write). No horizontal overflo
 at 390px. Only approved public page copy and local sample UI captures included.
 Draft PR prepared for review; no merge or production deployment. Ownership remains
 protective on this branch until integrated or explicitly handed off.
+
+## Finish: review-ready
+
+Implementation SHA: 9bff007e108f8b6ae70f76a474ce5793a226334c.
+All production/preview build and content checks plus six waitlist tests passed
+on that exact implementation. Draft review: https://github.com/vbalashi/dilum-landing/pull/8 .
+Branch pushed; scoped tree clean after this receipt. Public site unchanged.
+Review locally at http://localhost:4326/2000nl/ (owned Astro preview runtime).
+Protective ownership retained pending review/integration.
