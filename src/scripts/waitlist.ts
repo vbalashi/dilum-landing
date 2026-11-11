@@ -6,6 +6,7 @@ function mountWaitlist() {
       event.preventDefault();
       const button=form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
       const message=form.querySelector<HTMLElement>('.waitlist-message')!;
+      const submitLabel=button.textContent;
       if(button.disabled) return;
       if(form.dataset.preview==='true' || location.hostname!=='dilum.io') {
         message.textContent='Preview only: no signup was saved or sent.';
@@ -25,7 +26,7 @@ function mountWaitlist() {
         form.reset();
       } catch(error) {
         message.textContent=error instanceof Error?error.message:'Please try again later.';
-      } finally {button.disabled=false;button.textContent='Request access';}
+      } finally {button.disabled=false;button.textContent=submitLabel;}
     });
   });
 }
