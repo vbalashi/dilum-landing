@@ -22,6 +22,7 @@ function mountWaitlist() {
         });
         const result=await response.json();
         if(!response.ok) throw new Error(result.error||"We couldn't save your request. Please try again.");
+        (window as Window & { umami?: { track: (event: string) => void } }).umami?.track('waitlist_signup_success');
         message.textContent=result.message;
         form.reset();
       } catch(error) {
