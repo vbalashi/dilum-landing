@@ -37,3 +37,8 @@ Local previews: install dependencies with `npm ci` inside each worktree; never
 symlink `node_modules` across checkouts. If typography differs from production,
 check font HTTP responses and actual rendered fonts before adjusting sizes.
 See [local preview troubleshooting](docs/local-preview.md).
+
+Website translations: [locale/content/SEO rules](docs/i18n.md). Use shared
+components and reviewed copy, preserve English URLs, register only existing
+translations, and keep page locale separate from a collection's learning language.
+`npm run check:content` also validates translation freshness and hreflang links.

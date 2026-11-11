@@ -1,0 +1,12 @@
+---
+import ProductPage from '../../components/2000nlPage.astro';
+import {pageAlternates} from '../../i18n/pages';
+import {defaultLocale} from '../../i18n/locales';
+export function getStaticPaths(){
+  return pageAlternates('product.2000nl')
+    .filter(([locale])=>locale!==defaultLocale)
+    .map(([locale])=>({params:{locale},props:{locale}}));
+}
+const {locale}=Astro.props;
+---
+<ProductPage locale={locale}/>

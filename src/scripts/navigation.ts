@@ -10,7 +10,8 @@ function applyTheme(choice?: string | null) {
   const labels = {system:'System', light:'Light', dark:'Dark'};
   const next = modes[(modes.indexOf(choice!) + 1) % modes.length];
   document.querySelectorAll<HTMLButtonElement>('[data-theme-cycle]').forEach(button => {
-    const label = `Theme: ${labels[choice as keyof typeof labels]}. Switch to ${next} theme`;
+    const ruLabels:Record<string,string>={system:'системная',light:'светлая',dark:'тёмная'};
+    const label = root.lang==='ru'?`Тема: ${ruLabels[choice!]}. Переключить: ${ruLabels[next]}`:`Theme: ${labels[choice as keyof typeof labels]}. Switch to ${next} theme`;
     button.setAttribute('aria-label', label);
     button.title = label;
   });
@@ -29,7 +30,7 @@ function updateHeader() {
 function updatePage() {
   restoreTheme();
   document.querySelectorAll<HTMLAnchorElement>('.masthead nav a').forEach(link => {
-    const active = location.pathname.startsWith(new URL(link.href).pathname) || (link.pathname === '/products/' && ['/2000nl/','/audiofilms/','/pontix/'].includes(location.pathname));
+    const active = location.pathname.startsWith(new URL(link.href).pathname) || (link.pathname === '/products/' && ['/2000nl/','/ru/2000nl/','/audiofilms/','/pontix/'].includes(location.pathname));
     if (active) link.setAttribute('aria-current', 'page');
     else link.removeAttribute('aria-current');
   });
