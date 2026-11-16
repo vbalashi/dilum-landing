@@ -7,64 +7,64 @@
         "file": "products/2000nl.ru.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "241e757f7f283441a48c8e988fd92d40445f603d7607fc82c51e0e0ae8347d04"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "1c773e92d1769686b5f512d99b7010a947bd813657c03fe3571d17eb1e1a79c2"
       },
       "nl": {
         "file": "products/2000nl.nl.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "d9e6ad23e0f90c774bf54b11ad6d0a564ebf070ae0209971701313ca414cce8a"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "a1e4a21b9a39d7e50b8ce081dbfcfc6070c7b3b35a6dc0809751248ffebd0938"
       },
       "de": {
         "file": "products/2000nl.de.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "50ee63e40d61e0ff85d54ac8a73623eca30010b65354025f14ff109815097810"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "a4c300d0373e3cb0ac5b1c13dcd8b2375188eb342040b0dcd7e8005fdeedf66b"
       },
       "fr": {
         "file": "products/2000nl.fr.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "a62db366b8c26df1837ebec4d8d0c81fd839ad4040e32730a38f64c0b9f8b816"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "71d5036d1f8f2df2aea4050e7529f4f099fc0e071a9c1f90f6f92891be18ee6a"
       },
       "es": {
         "file": "products/2000nl.es.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "de502b766dc91eac34a69eb2d6d678e2af83615b73e360c2d8b0e9ef0868a344"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "3301d1f57981f78185617b2d949f2799e8ebfd78f8f2ab4017ac2f43e8409600"
       },
       "pl": {
         "file": "products/2000nl.pl.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "fdd4bbaf5a627df0c3bf582d65336acadc6b337c950a14efd382b16ced3243a7"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "f499530fe0cc0b3b7615a4cb632b6797a14ef24c4655482f29a20bd3535955ad"
       },
       "uk": {
         "file": "products/2000nl.uk.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "572b3beb7334908d47fda667da082d83fc59bd7754dd0c18aab58ac7e1882da5"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "90b38ee5d6dc39d946a38accec9965e97ad36b5c5e2f2f103e7729df1deecbd2"
       },
       "it": {
         "file": "products/2000nl.it.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "582bf7e1bb38a1f6f1013b17283d827c75b6ed7dbbd9f8994968ae748b9cf936"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "5397898879b8fe31ce4d48db3d781c65e31dc1cb40b187229d57598f0f5ab911"
       },
       "pt": {
         "file": "products/2000nl.pt.json",
         "status": "reviewed",
         "reviewer": "agent-assisted copy review; no native-speaker certification",
-        "sourceHash": "042a8443cdd7d1d37d12848e36cfe706aaa018fb2f8e31b990ac27f1812f1c5c",
-        "translationHash": "ccfa03a0727e807fe9fb22a7f240d66944903348d2502698f3b4581bdf4430fd"
+        "sourceHash": "1e25934690a6f1dc3a186acb6aeb91ede773a6e6cec36c908fb7e794defe075b",
+        "translationHash": "e541f1c924a1cc3969d63c83f1169b1d9ba321ef0c7f11bea9028108161413ae"
       }
     }
   },
