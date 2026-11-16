@@ -73,3 +73,12 @@ appear as public alternatives. Local private previews may show linked drafts and
 allow their author to remain unassigned. Published articles require an author.
 Switching language follows the selected link; no automatic redirect overrides a
 direct article URL. Article versions are approved and exported individually.
+
+## Light and dark screenshots
+
+For a theme-aware screenshot, write two consecutive Markdown images with the
+same alt text; name the second file with the suffix `-dark.png`.
+Keep both files in editorial media and use `/images/` paths. The reading style
+displays one image according to the chosen site theme, including system mode.
+Both image paths remain visible to the article export script. Use ordinary
+Markdown images for screenshots that do not need separate versions.
