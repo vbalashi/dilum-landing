@@ -11,11 +11,11 @@ import { preview, privatePreview } from '../lib/content';
 import sun from 'lucide-static/icons/sun.svg?raw';
 import moon from 'lucide-static/icons/moon.svg?raw';
 import monitor from 'lucide-static/icons/monitor.svg?raw';
-const { title, description, lang='en', noindex=false, structured, article=false, translationKey } = Astro.props;
+const { title, description, lang='en', noindex=false, structured, article=false, translationKey, articleAlternates } = Astro.props;
 const locale=isLocale(lang)?lang:'en';
 const text=ui[locale];
-const alternatives=pageAlternates(translationKey as PageId|undefined);
-const defaultPath=translationKey?defaultPagePath(translationKey):undefined;
+const alternatives=articleAlternates ?? pageAlternates(translationKey as PageId|undefined);
+const defaultPath=articleAlternates?.find(([code]:[string,string])=>code==='en')?.[1] ?? (articleAlternates?.length ? articleAlternates[0][1] : translationKey?defaultPagePath(translationKey):undefined);
 const externalLanguage=locale==='en'?'':' (EN)';
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const schema = structured ?? { '@context':'https://schema.org', '@type':'Organization', name:'Dilum Labs', url:'https://dilum.io/' };
@@ -53,12 +53,12 @@ const themes = [{id:'system',icon:monitor},{id:'light',icon:sun},{id:'dark',icon
 <body transition:animate="none">
 <a class="skip" href="#main">{text.skip}</a>
 <div class="header-space" aria-hidden="true"></div>
-<div class="site-header" transition:persist={`studio-header-${locale}-${translationKey??'none'}`}>
+<div class="site-header" transition:persist={`studio-header-${locale}-${translationKey??(articleAlternates?canonical:'none')}`}>
 {preview && <div class="preview-banner">{privatePreview?text.previewPrivate:text.previewPublic} <span aria-hidden="true">·</span> {privatePreview?text.privateOnly:text.publishedOnly}</div>}
 <header class="masthead">
   <a class="brand" href="/" aria-label={text.home}>dilum<span>io</span><small>{text.brand}</small></a>
   <nav aria-label={text.navigation}>{navigation.map(item=><a href={item.url} aria-current={item.active?'page':undefined}>{item.label}{locale!=='en'&&!('translated' in item)&&<span class="nav-language" lang="en" title={text.english}>EN</span>}</a>)}</nav>
-  <LanguageSwitch pageId={translationKey} locale={locale}/>
+  <LanguageSwitch pageId={translationKey} locale={locale} articleVariants={articleAlternates}/>
   <button class="theme-cycle" type="button" data-theme-cycle aria-label={text.themePrompt.replace('{current}',text.themeSystem).replace('{next}',text.themeLight)} title={text.themePrompt.replace('{current}',text.themeSystem).replace('{next}',text.themeLight)}>
     {themes.map(theme=><span data-theme-icon={theme.id} aria-hidden="true" set:html={theme.icon}/>)}
   </button>
