@@ -12,6 +12,11 @@ updated: 2026-11-16
 author: nikolai-khrustalev
 products:
   - 2000nl
+crossposts:
+  - platform: Substack
+    url: https://nikolkox.substack.com/p/how-to-make-a-dutch-vocabulary-card
+  - platform: Medium
+    url: https://medium.com/@vbalashi/how-to-make-a-dutch-vocabulary-card-edaa5be31ef3
 ---
 You can **miss a train** and **miss a friend**. Dutch uses one word for both, too: *missen*. If you put only “missen — to miss” on a card, you may remember the translation without knowing which situation to use it in.
 
