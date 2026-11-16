@@ -65,5 +65,11 @@
   "trainingAlt": "Finestra di formazione 2000nl che mostra de kamer, la sua definizione olandese e una frase di esempio, con il pulsante Impara.",
   "audiofilmsAlt": "Prototipo di AudioFilms su YouTube, che mostra un video olandese, controlli delle frasi e ricerca nel dizionario collegati a 2000nl.",
   "metaTitle": "2000 NL — Pratica del vocabolario",
-  "metaDescription": "Esplora un dizionario di apprendimento dell'olandese, amplia il tuo vocabolario e ritorna alle parole con ripetizioni spaziate. Accesso anticipato su invito."
+  "metaDescription": "Esplora un dizionario di apprendimento dell'olandese, amplia il tuo vocabolario e ritorna alle parole con ripetizioni spaziate. Accesso anticipato su invito.",
+  "collectionsTitle": "Le tue parole, insieme.",
+  "collectionsBody": "Crea le tue raccolte, organizza le parole utili e condividile con gli altri utenti di 2000nl.",
+  "collectionsAlt": "Una raccolta con l’opzione di condivisione aperta.",
+  "translationAlt": "Gli stessi esempi tradotti in russo e in inglese.",
+  "devicesTitle": "A casa su ogni schermo.",
+  "devicesBody": "2000nl è un’app web per computer e telefono. Scegli un tema chiaro o scuro: ti serve solo una connessione internet."
 }

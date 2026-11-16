@@ -65,5 +65,11 @@
   "trainingAlt": "2000nl trainingsvenster met de kamer, de Nederlandse definitie en een voorbeeldzin, met de knop Leren.",
   "audiofilmsAlt": "AudioFilms-prototype op YouTube, met een Nederlandse video, zinsbediening en opzoeken in het woordenboek aangesloten op 2000nl.",
   "metaTitle": "2000 NL — Woordenschat oefenen",
-  "metaDescription": "Verken een Nederlands leerwoordenboek, bouw uw eigen woordenschatoefening en keer terug naar woorden met gespreide herhaling. Vroege toegang op uitnodiging."
+  "metaDescription": "Verken een Nederlands leerwoordenboek, bouw uw eigen woordenschatoefening en keer terug naar woorden met gespreide herhaling. Vroege toegang op uitnodiging.",
+  "collectionsTitle": "Jouw woorden bij elkaar.",
+  "collectionsBody": "Maak eigen collecties, verzamel nuttige woorden en deel ze met andere 2000nl-gebruikers.",
+  "collectionsAlt": "Een collectie met de optie Delen.",
+  "translationAlt": "Vertalingen van dezelfde voorbeelden in het Russisch en Engels.",
+  "devicesTitle": "Thuis op elk scherm.",
+  "devicesBody": "2000nl is een webapp voor je computer en telefoon. Kies een licht of donker thema; je hebt alleen internet nodig."
 }

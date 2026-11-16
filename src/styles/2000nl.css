@@ -314,3 +314,15 @@
   .nl-showcase { padding:20px 35% 75px 4% }
   .nl-card-shot { width:45%; bottom:40px; right:2% }
 }
+
+/* Desktop application and a mobile screen overlap in the opening showcase. */
+.nl-showcase { max-width:none; padding:30px 16% 110px 0 }
+.nl-card-shot { width:25%; right:0; bottom:35px }
+.nl-device-note { border-top:1px solid var(--line); padding:65px 0 }
+.nl-device-note h2 { font:400 clamp(32px,3.6vw,44px)/1.25 var(--serif); letter-spacing:-.04em; margin:0 0 22px }
+.nl-device-note p { max-width:720px; color:var(--muted); font:400 17px/1.85 var(--sans) }
+@media(max-width:600px) {
+ .nl-showcase { padding:20px 13% 55px 0 }
+ .nl-card-shot { width:31%; right:0; bottom:24px }
+ .nl-device-note { padding:45px 0 }
+}

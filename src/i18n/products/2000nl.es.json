@@ -65,5 +65,11 @@
   "trainingAlt": "Ventana de formación de 2000nl que muestra de kamer, su definición holandesa y una frase de ejemplo, con el botón Aprender.",
   "audiofilmsAlt": "Prototipo de AudioFilms en YouTube, que muestra un vídeo holandés, controles de frases y búsqueda de diccionario conectados a 2000nl.",
   "metaTitle": "2000 NL — Práctica de vocabulario",
-  "metaDescription": "Explora un diccionario de aprendizaje de holandés, desarrolla tu propia práctica de vocabulario y vuelve a las palabras con repetición espaciada. Acceso anticipado por invitación."
+  "metaDescription": "Explora un diccionario de aprendizaje de holandés, desarrolla tu propia práctica de vocabulario y vuelve a las palabras con repetición espaciada. Acceso anticipado por invitación.",
+  "collectionsTitle": "Tus palabras, reunidas.",
+  "collectionsBody": "Crea tus propias colecciones, organiza palabras útiles y compártelas con otros usuarios de 2000nl.",
+  "collectionsAlt": "Una colección con la opción de compartir abierta.",
+  "translationAlt": "Los mismos ejemplos traducidos al ruso y al inglés.",
+  "devicesTitle": "En cualquier pantalla.",
+  "devicesBody": "2000nl es una aplicación web para ordenador y móvil. Elige un tema claro u oscuro; solo necesitas conexión a internet."
 }
