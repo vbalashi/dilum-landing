@@ -1,30 +1,7 @@
 ---
-import Editorial from '../layouts/Editorial.astro';
-import NLProductPage from '../components/2000nlPage.astro';
-import AudiofilmsLanding from '../components/AudiofilmsLanding.astro';
-import PontixLanding from '../components/PontixLanding.astro';
-import '../styles/2000nl.css';
-import '../styles/audiofilms.css';
-import '../styles/pontix.css';
-import {products,visibleArticles} from '../lib/content';
-import {productPages} from '../lib/product-pages';
-export function getStaticPaths(){return products.map(product=>({params:{product:product.slug},props:{product}}));}
+import ProductPage from '../components/ProductPage.astro';
+import {productIds} from '../i18n/pages';
+export function getStaticPaths(){return productIds.map(product=>({params:{product},props:{product}}));}
 const {product}=Astro.props;
-const copy=productPages[product.slug as keyof typeof productPages];
-const articles=(await visibleArticles()).filter(a=>a.data.products.includes(product.slug));
-const structured={'@context':'https://schema.org','@type':'SoftwareApplication',name:product.name,url:`https://dilum.io/${product.slug}/`,description:copy.intro,applicationCategory:'EducationalApplication',creator:{'@type':'Organization',name:'Dilum Labs',url:'https://dilum.io/'}};
 ---
-{product.slug==='2000nl'?<NLProductPage locale="en"/>:<Editorial title={`${product.name} — ${product.kind}`} description={copy.intro} structured={structured}>
-<section class="wrap product-landing">
- {product.slug==='audiofilms'? <AudiofilmsLanding/> : product.slug==='pontix'? <PontixLanding/> : <>
- <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/products/">Products</a><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>
- <p class="eyebrow">{product.name} · {product.status}</p>
- <h1 class="display">{copy.headline}</h1><p class="intro">{copy.intro}</p>
- <div class="intro-actions">{product.url&&<a class="text-link" href={product.url}>{product.cta} ↗</a>}<a class="text-link" href="/contact/">Ask about the project →</a></div>
- <div class="product-sections">{copy.sections.map(([title,body])=><section class="person"><h2>{title}</h2><p>{body}</p></section>)}</div>
- <section class="product-access"><h2>Access & availability</h2><p class="intro">{copy.access}</p></section>
-
- </>}
- <section class="product-writing"><h2>Stories behind the product</h2>{articles.map(a=><article class="person"><h3 lang={a.data.lang}><a href={`/blog/${a.data.slug}/`}>{a.data.title}</a></h3><p lang={a.data.lang}>{a.data.description}</p></article>)}{articles.length===0&&<p class="empty">Product stories are being prepared. <a href="/blog/">Visit the journal →</a></p>}</section>
-</section>
-</Editorial>}
+<ProductPage product={product} locale="en"/>

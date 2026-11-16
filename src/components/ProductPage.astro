@@ -1,0 +1,22 @@
+---
+import Editorial from '../layouts/Editorial.astro';
+import NLLanding from './2000nlLanding.astro';
+import AudiofilmsLanding from './AudiofilmsLanding.astro';
+import PontixLanding from './PontixLanding.astro';
+import '../styles/2000nl.css';
+import '../styles/audiofilms.css';
+import '../styles/pontix.css';
+import {productCopy} from '../i18n/products';
+import {ui} from '../i18n/ui';
+import {productPath,type ProductId} from '../i18n/pages';
+import type {Locale} from '../i18n/locales';
+import {visibleArticles} from '../lib/content';
+const {locale='en',product}=Astro.props as {locale?:Locale;product:ProductId};
+const copy=productCopy[product][locale]; const text=ui[locale];
+const articles=(await visibleArticles()).filter(a=>a.data.products.includes(product)&&a.data.lang===locale);
+const structured={'@context':'https://schema.org','@type':'SoftwareApplication',name:product==='2000nl'?'2000 NL':product==='audiofilms'?'AudioFilms':'Pontix',url:new URL(productPath(product,locale),Astro.site).href,description:copy.metaDescription,inLanguage:locale,applicationCategory:'EducationalApplication',creator:{'@type':'Organization',name:'Dilum Labs',url:'https://dilum.io/'}};
+---
+<Editorial title={copy.metaTitle} description={copy.metaDescription} lang={locale} translationKey={`product.${product}`} structured={structured}>
+<section class="wrap product-landing">{product==='2000nl'?<NLLanding locale={locale}/>:product==='audiofilms'?<AudiofilmsLanding locale={locale}/>:<PontixLanding locale={locale}/>}
+<section class="product-writing"><h2>{text.writing}</h2>{articles.map(a=><article class="person"><h3><a href={`/blog/${a.data.slug}/`}>{a.data.title}</a></h3><p>{a.data.description}</p></article>)}{articles.length===0&&<p class="empty">{text.writingEmpty} <a href="/blog/">{text.visitJournal}{locale!=='en'&&' (EN)'} →</a></p>}</section></section>
+</Editorial>

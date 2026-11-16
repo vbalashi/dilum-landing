@@ -1,0 +1,16 @@
+{
+  "metaTitle": "Products",
+  "metaDescription": "The digital products we are building at Dilum Labs.",
+  "heading": "Our products",
+  "intro": "Learning is our first focus. These connected projects approach vocabulary through practice, video, and the words we encounter.",
+  "explore": "Explore {product}",
+  "nlKind": "Vocabulary practice",
+  "nlStatus": "Early access · Dutch first",
+  "nlDescription": "Prepared dictionary content, flexible exercises, and spaced repetition. A focused way to practise vocabulary without making every card yourself.",
+  "audioKind": "Practice with video",
+  "audioStatus": "In development",
+  "audioDescription": "Work with phrases in video, repeat them, and look up unfamiliar words without losing your place.",
+  "pontixKind": "Translation in context",
+  "pontixStatus": "In development",
+  "pontixDescription": "An early browser-extension concept for understanding words as you read, with vocabulary-practice connections in development."
+}

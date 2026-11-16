@@ -1,12 +1,14 @@
 ---
+import {ui} from '../i18n/ui';
 import Waitlist from './Waitlist.astro';
 import { nlCopy } from '../i18n/products/2000nl';
+import {productPath,productsPath} from '../i18n/pages';
 import type { Locale } from '../i18n/locales';
 const {locale='en'} = Astro.props as {locale?:Locale};
 const copy = nlCopy[locale];
 ---
 <div class="nl-landing">
- <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href="/products/">{copy.products}</a><span aria-hidden="true">/</span><span aria-current="page">2000nl</span></nav>
+ <nav class="breadcrumbs" aria-label={copy.breadcrumbsLabel}><a href={productsPath(locale)}>{ui[locale].products}</a><span aria-hidden="true">/</span><span aria-current="page">2000nl</span></nav>
  <header class="nl-hero">
   <p class="nl-wordmark">2000<span>nl</span><small>{copy.tagline}</small></p>
   <p class="eyebrow">{copy.status}</p>
@@ -16,8 +18,8 @@ const copy = nlCopy[locale];
   <p class="nl-access">{copy.access}<a href="https://2000.dilum.io/">{copy.signIn}</a></p>
  </header>
  <figure class="nl-showcase" id="inside">
-  <div class="nl-library-shot"><img src="/images/2000nl/library.jpg" alt={copy.libraryAlt} width="1160" height="780" fetchpriority="high"/></div>
-  <div class="nl-card-shot"><img src="/images/2000nl/dictionary-card.jpg" alt={copy.cardAlt} width="690" height="710"/></div>
+  <div class="nl-library-shot"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/desktop-light.jpg" alt={copy.libraryAlt} loading="eager"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/desktop-dark.jpg" alt={copy.libraryAlt} loading="eager"/></span></div>
+  <div class="nl-card-shot"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/builder-mobile-light.jpg" alt={copy.builderCaption} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/builder-mobile-dark.jpg" alt={copy.builderCaption} loading="lazy"/></span></div>
  </figure>
  <section class="nl-steps" aria-label={copy.stepsLabel}>
   <div><p class="eyebrow">{copy.discoverStep}</p><h2>{copy.discoverTitle}</h2><p>{copy.discoverBody}</p></div>
@@ -26,15 +28,17 @@ const copy = nlCopy[locale];
  </section>
  <section class="nl-feature">
   <div class="nl-feature-copy"><p class="eyebrow">{copy.builderEyebrow}</p><h2>{copy.builderTitleFirst}<br/>{copy.builderTitleSecond}</h2><p>{copy.builderBody}</p><p>{copy.builderMore}</p><a class="nl-secondary" href="#waitlist">{copy.feedback}</a></div>
-  <figure class="nl-screen nl-builder"><img src="/images/2000nl/session-builder.jpg" alt={copy.builderAlt} width="785" height="800" loading="lazy"/><figcaption>{copy.builderCaption}</figcaption></figure>
+  <figure class="nl-screen nl-builder"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/builder-mobile-light.jpg" alt={copy.builderCaption} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/builder-mobile-dark.jpg" alt={copy.builderCaption} loading="lazy"/></span><figcaption>{copy.builderCaption}</figcaption></figure>
  </section>
  <section class="nl-feature nl-feature-reverse">
-  <figure class="nl-screen nl-training"><img src="/images/2000nl/training.jpg" alt={copy.trainingAlt} width="790" height="795" loading="lazy"/><figcaption>{copy.trainingCaption}</figcaption></figure>
+  <figure class="nl-screen nl-training"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/library-mobile-light.jpg" alt={copy.cardAlt} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/library-mobile-dark.jpg" alt={copy.cardAlt} loading="lazy"/></span></figure>
   <div class="nl-feature-copy"><p class="eyebrow">{copy.contextEyebrow}</p><h2>{copy.contextTitleFirst}<br/>{copy.contextTitleSecond}<br/>{copy.contextTitleThird}</h2><p>{copy.contextBody}</p><p>{copy.contextMore}</p></div>
  </section>
- <section class="nl-language-support"><p class="eyebrow">{copy.supportEyebrow}</p><h2>{copy.supportTitleFirst}<br/>{copy.supportTitleSecond}</h2><p>{copy.supportBody}</p><p>{copy.supportCaution}</p><p class="nl-roadmap"><strong>{copy.plannedLabel}</strong>{copy.plannedBody}</p></section>
- <section class="nl-connected-product"><div><p class="eyebrow">{copy.audiofilmsStatus}</p><h2>{copy.audiofilmsTitleFirst}<br/>{copy.audiofilmsTitleSecond}</h2><p>{copy.audiofilmsBody}</p><a class="nl-secondary" href="/audiofilms/">{copy.audiofilmsLink}</a></div><figure><a href="/audiofilms/" aria-label={copy.audiofilmsLabel}><img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" loading="lazy" alt={copy.audiofilmsAlt}/></a></figure></section>
- <p class="nl-access">{copy.pontixIntro}<a href="/pontix/">Pontix</a>{copy.pontixBody}</p>
+ <section class="nl-feature"><div class="nl-feature-copy"><h2>{copy.collectionsTitle}</h2><p>{copy.collectionsBody}</p></div><figure class="nl-screen"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/collections-light.jpg" alt={copy.collectionsAlt} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/collections-dark.jpg" alt={copy.collectionsAlt} loading="lazy"/></span></figure></section>
+ <section class="nl-feature nl-feature-reverse"><figure class="nl-screen"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/translations-light.jpg" alt={copy.translationAlt} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/translations-dark.jpg" alt={copy.translationAlt} loading="lazy"/></span></figure><div class="nl-feature-copy"><p class="eyebrow">{copy.supportEyebrow}</p><h2>{copy.supportTitleFirst}<br/>{copy.supportTitleSecond}</h2><p>{copy.supportBody}</p><p>{copy.supportCaution}</p><p class="nl-roadmap"><strong>{copy.plannedLabel}</strong>{copy.plannedBody}</p></div></section>
+ <section class="nl-device-note"><h2>{copy.devicesTitle}</h2><p>{copy.devicesBody}</p><div class="nl-device-pair"><figure class="nl-device-desktop"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/desktop-light.jpg" alt={copy.libraryAlt} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/desktop-dark.jpg" alt={copy.libraryAlt} loading="lazy"/></span></figure><figure class="nl-device-mobile"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/library-mobile-light.jpg" alt={copy.cardAlt} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/library-mobile-dark.jpg" alt={copy.cardAlt} loading="lazy"/></span></figure></div></section>
+ <section class="nl-connected-product"><div><p class="eyebrow">{copy.audiofilmsStatus}</p><h2>{copy.audiofilmsTitleFirst}<br/>{copy.audiofilmsTitleSecond}</h2><p>{copy.audiofilmsBody}</p><a class="nl-secondary" href={productPath('audiofilms',locale)}>{copy.audiofilmsLink}</a></div><figure><a href={productPath('audiofilms',locale)} aria-label={copy.audiofilmsLabel}><img src="/images/audiofilms/youtube-workspace.jpg" width="1590" height="825" loading="lazy" alt={copy.audiofilmsAlt}/></a></figure></section>
+ <p class="nl-access">{copy.pontixIntro}<a href={productPath('pontix',locale)}>Pontix</a>{copy.pontixBody}</p>
  <Waitlist locale={locale} cta={copy.join.trim()}/>
  <section class="nl-faq" aria-label={copy.faqLabel}>
   <p class="eyebrow">{copy.faqEyebrow}</p>

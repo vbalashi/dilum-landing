@@ -1,0 +1,16 @@
+{
+  "metaTitle": "Prodotti",
+  "metaDescription": "I prodotti digitali che stiamo sviluppando a Dilum Labs.",
+  "heading": "I nostri prodotti",
+  "intro": "Cominciamo dall’apprendimento delle lingue. Questi progetti collegati affrontano il lessico attraverso esercizi, video e testi della vita quotidiana.",
+  "explore": "Scopri {product}",
+  "nlKind": "Esercizi di vocabolario",
+  "nlStatus": "Accesso anticipato · prima il neerlandese",
+  "nlDescription": "Contenuti di dizionario già pronti, esercizi flessibili e ripetizione dilazionata. Esercitati con le parole senza creare ogni scheda da zero.",
+  "audioKind": "Esercitarsi con i video",
+  "audioStatus": "In sviluppo",
+  "audioDescription": "Lavora sulle frasi dei video, ripetile e cerca le parole sconosciute senza perdere il punto di riproduzione.",
+  "pontixKind": "Traduzione nel contesto",
+  "pontixStatus": "In sviluppo",
+  "pontixDescription": "Un primo concetto di estensione del browser per capire le parole durante la lettura. Il collegamento agli esercizi di vocabolario è ancora in sviluppo."
+}

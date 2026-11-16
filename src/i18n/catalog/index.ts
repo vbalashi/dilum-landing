@@ -1,0 +1,12 @@
+import en from './products.en.json';
+import ru from './products.ru.json';
+import nl from './products.nl.json';
+import de from './products.de.json';
+import fr from './products.fr.json';
+import es from './products.es.json';
+import pl from './products.pl.json';
+import uk from './products.uk.json';
+import it from './products.it.json';
+import pt from './products.pt.json';
+import type {Locale} from '../locales';
+export const catalogCopy={en,ru,nl,de,fr,es,pl,uk,it,pt} satisfies Record<Locale,typeof en>;

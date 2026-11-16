@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Vroege toegang",
+  "title": "Wat zou je graag willen leren?",
+  "intro": "2000 NL begint met Nederlands. Toegang is op uitnodiging. Vertel ons welke taal je wilt leren. Aanmelden maakt geen account of betaald abonnement aan.",
+  "email": "E-mailadres",
+  "language": "Taal die je wilt leren",
+  "languagePlaceholder": "bijv. Nederlands, Spaans, Japans",
+  "interests": "Wat interesseert u het meest?",
+  "optional": "(optioneel)",
+  "video": "Videooefening",
+  "reading": "Lezen & vertalen",
+  "flashcards": "Flitskaarten",
+  "testing": "Ik wil graag helpen bij het testen van vroege versies.",
+  "cta": "Toegang aanvragen",
+  "privacy": "We gebruiken je e-mailadres voor nieuws over toegang tot 2000 NL. Deelname aan tests is optioneel. Je e-mailadres, leertaal, interesses en testkeuze worden opgeslagen in onze bestaande Cloudflare-database in de EU. Je aanmelding wordt 12 maanden na de laatste wijziging verwijderd. Voor eerdere verwijdering kun je schrijven naar",
+  "noscript": "Dit formulier heeft JavaScript nodig. Dat kan ook",
+  "contact": "Neem contact met ons op over toegang",
+  "preview": "Alleen voorbeeld: er is geen aanmelding opgeslagen of verzonden.",
+  "sending": "Verzenden…",
+  "success": "Je staat op de lijst. We sturen u een e-mail over de toegang.",
+  "error": "We kunnen uw verzoek niet opslaan. Probeer het opnieuw.",
+  "offline": "Probeer het later opnieuw."
+}

@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Early access",
+  "title": "What would you like to learn?",
+  "intro": "2000 NL currently starts with Dutch, with access by invitation. Tell us which language interests you. Joining does not create an account or a paid subscription.",
+  "email": "Email address",
+  "language": "Language you want to learn",
+  "languagePlaceholder": "e.g. Dutch, Spanish, Japanese",
+  "interests": "What interests you most?",
+  "optional": "(optional)",
+  "video": "Video practice",
+  "reading": "Reading & translation",
+  "flashcards": "Flashcards",
+  "testing": "I'd like to help test early versions.",
+  "cta": "Request access",
+  "privacy": "We'll use your email for 2000 NL access updates. Testing invitations are optional. We store your email, learning language, interests and testing choice in our existing EU Cloudflare database. Your signup is deleted 12 months after its last update. Request earlier removal at",
+  "noscript": "This form needs JavaScript. You can also",
+  "contact": "contact us about access",
+  "preview": "Preview only: no signup was saved or sent.",
+  "sending": "Sending…",
+  "success": "You're on the list. We'll email you about access.",
+  "error": "We couldn't save your request. Please try again.",
+  "offline": "Please try again later."
+}

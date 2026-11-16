@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Frühzeitiger Zugriff",
+  "title": "Was möchten Sie lernen?",
+  "intro": "2000 NL beginnt derzeit mit Niederländisch, mit Zugang auf Einladung. Sagen Sie uns, welche Sprache Sie interessiert. Durch den Beitritt wird weder ein Konto noch ein kostenpflichtiges Abonnement erstellt.",
+  "email": "E-Mail-Adresse",
+  "language": "Sprache, die Sie lernen möchten",
+  "languagePlaceholder": "z.B. Niederländisch, Spanisch, Japanisch",
+  "interests": "Was interessiert Sie am meisten?",
+  "optional": "(optional)",
+  "video": "Videoübung",
+  "reading": "Lesen und Übersetzen",
+  "flashcards": "Karteikarten",
+  "testing": "Ich würde gerne beim Testen früher Versionen helfen.",
+  "cta": "Zugriff anfordern",
+  "privacy": "Wir verwenden Ihre E-Mail-Adresse für Neuigkeiten zum Zugang zu 2000 NL. Die Teilnahme an Tests ist freiwillig. Ihre E-Mail-Adresse, Lernsprache, Interessen und Testpräferenz werden in unserer bestehenden Cloudflare-Datenbank in der EU gespeichert. Ihre Anmeldung wird 12 Monate nach der letzten Aktualisierung gelöscht. Für eine frühere Löschung schreiben Sie an",
+  "noscript": "Dieses Formular benötigt JavaScript. Das können Sie auch",
+  "contact": "Kontaktieren Sie uns bezüglich des Zugangs",
+  "preview": "Nur Vorschau: Es wurde keine Anmeldung gespeichert oder gesendet.",
+  "sending": "Senden…",
+  "success": "Du bist auf der Liste. Wir informieren Sie per E-Mail über den Zugang.",
+  "error": "Wir konnten Ihre Anfrage nicht speichern. Bitte versuchen Sie es erneut.",
+  "offline": "Bitte versuchen Sie es später noch einmal."
+}
