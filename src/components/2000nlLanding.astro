@@ -18,8 +18,8 @@ const copy = nlCopy[locale];
   <p class="nl-access">{copy.access}<a href="https://2000.dilum.io/">{copy.signIn}</a></p>
  </header>
  <figure class="nl-showcase" id="inside">
-  <div class="nl-library-shot"><img src="/images/2000nl/library.jpg" alt={copy.libraryAlt} width="1160" height="780" fetchpriority="high"/></div>
-  <div class="nl-card-shot"><img src="/images/2000nl/dictionary-card.jpg" alt={copy.cardAlt} width="690" height="710"/></div>
+  <div class="nl-library-shot"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/library-mobile-light.jpg" alt={copy.cardAlt} loading="eager"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/library-mobile-dark.jpg" alt={copy.cardAlt} loading="eager"/></span></div>
+  <div class="nl-card-shot"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/builder-mobile-light.jpg" alt={copy.builderCaption} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/builder-mobile-dark.jpg" alt={copy.builderCaption} loading="lazy"/></span></div>
  </figure>
  <section class="nl-steps" aria-label={copy.stepsLabel}>
   <div><p class="eyebrow">{copy.discoverStep}</p><h2>{copy.discoverTitle}</h2><p>{copy.discoverBody}</p></div>
@@ -28,10 +28,10 @@ const copy = nlCopy[locale];
  </section>
  <section class="nl-feature">
   <div class="nl-feature-copy"><p class="eyebrow">{copy.builderEyebrow}</p><h2>{copy.builderTitleFirst}<br/>{copy.builderTitleSecond}</h2><p>{copy.builderBody}</p><p>{copy.builderMore}</p><a class="nl-secondary" href="#waitlist">{copy.feedback}</a></div>
-  <figure class="nl-screen nl-builder"><img src="/images/2000nl/session-builder.jpg" alt={copy.builderAlt} width="785" height="800" loading="lazy"/><figcaption>{copy.builderCaption}</figcaption></figure>
+  <figure class="nl-screen nl-builder"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/builder-mobile-light.jpg" alt={copy.builderCaption} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/builder-mobile-dark.jpg" alt={copy.builderCaption} loading="lazy"/></span><figcaption>{copy.builderCaption}</figcaption></figure>
  </section>
  <section class="nl-feature nl-feature-reverse">
-  <figure class="nl-screen nl-training"><img src="/images/2000nl/training.jpg" alt={copy.trainingAlt} width="790" height="795" loading="lazy"/><figcaption>{copy.trainingCaption}</figcaption></figure>
+  <figure class="nl-screen nl-training"><span class="nl-theme-image nl-image-light"><img src="/images/2000nl/library-mobile-light.jpg" alt={copy.cardAlt} loading="lazy"/></span><span class="nl-theme-image nl-image-dark"><img src="/images/2000nl/library-mobile-dark.jpg" alt={copy.cardAlt} loading="lazy"/></span></figure>
   <div class="nl-feature-copy"><p class="eyebrow">{copy.contextEyebrow}</p><h2>{copy.contextTitleFirst}<br/>{copy.contextTitleSecond}<br/>{copy.contextTitleThird}</h2><p>{copy.contextBody}</p><p>{copy.contextMore}</p></div>
  </section>
  <section class="nl-language-support"><p class="eyebrow">{copy.supportEyebrow}</p><h2>{copy.supportTitleFirst}<br/>{copy.supportTitleSecond}</h2><p>{copy.supportBody}</p><p>{copy.supportCaution}</p><p class="nl-roadmap"><strong>{copy.plannedLabel}</strong>{copy.plannedBody}</p></section>

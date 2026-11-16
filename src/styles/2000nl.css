@@ -301,3 +301,16 @@
 
 }
 
+
+/* The product previews follow the site’s chosen scheme, including System. */
+.nl-theme-image { display:block }
+.nl-image-dark { display:none }
+:root[data-scheme=dark] .nl-image-light { display:none }
+:root[data-scheme=dark] .nl-image-dark { display:block }
+.nl-showcase { max-width:720px; margin-left:auto; margin-right:auto; padding:30px 36% 110px 8% }
+.nl-card-shot { width:43%; bottom:65px; right:5% }
+.nl-screen { max-width:390px; justify-self:center; width:100% }
+@media(max-width:600px) {
+  .nl-showcase { padding:20px 35% 75px 4% }
+  .nl-card-shot { width:45%; bottom:40px; right:2% }
+}
