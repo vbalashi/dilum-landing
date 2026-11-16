@@ -292,3 +292,12 @@ body:has(.preview-banner) .header-space { height:154px; }
 @media(max-width:850px){.language-switch{margin-left:auto;}.masthead:has(.language-switch) .theme-cycle{margin-left:0;}.masthead:has(.language-switch){column-gap:18px;}}
 @media(max-width:600px){.masthead:has(.language-switch) nav{gap:14px;}.masthead:has(.language-switch) nav a{font-size:12px;}.masthead:has(.language-switch) .brand small{max-width:150px;font-size:7px;}.language-switch{font-size:12px;}.language-globe{display:none;}}
 .nav-language{display:inline-block;margin-left:4px;font:500 9px/1 var(--sans);vertical-align:super;color:var(--muted);}
+
+/* Adjacent Markdown images ending in -dark show the matching theme. */
+.reading img + img[src$='-dark.png'] { display:none; }
+:root[data-scheme='dark'] .reading img:has(+ img[src$='-dark.png']) { display:none; }
+:root[data-scheme='dark'] .reading img + img[src$='-dark.png'] { display:inline; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-scheme]) .reading img:has(+ img[src$='-dark.png']) { display:none; }
+  :root:not([data-scheme]) .reading img + img[src$='-dark.png'] { display:inline; }
+}

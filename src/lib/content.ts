@@ -20,10 +20,29 @@ export const products = [
 export async function visibleArticles() {
   const entries = await getCollection('articles');
   const slugs = new Set<string>();
+  const groupLanguages = new Set<string>();
   for (const entry of entries) {
     if(slugs.has(entry.data.slug)) throw new Error(`Duplicate article slug: ${entry.data.slug}`);
     slugs.add(entry.data.slug);
+    if (entry.data.translationGroup) {
+      const key=`${entry.data.translationGroup}:${entry.data.lang}`;
+      if(groupLanguages.has(key)) throw new Error(`Duplicate article language in translation group: ${key}`);
+      groupLanguages.add(key);
+    }
   }
   return entries.filter(a => privatePreview || !a.data.draft).sort((a,b)=>b.data.date.getTime()-a.data.date.getTime());
 }
 export const dateLabel = (date:Date, lang='en') => new Intl.DateTimeFormat(lang,{year:'numeric',month:'long',day:'numeric',timeZone:'UTC'}).format(date);
+
+export function articleAlternates(entries: Awaited<ReturnType<typeof visibleArticles>>, entry: Awaited<ReturnType<typeof visibleArticles>>[number]) {
+  const group=entry.data.translationGroup;
+  if(!group) return [];
+  const variants=entries.filter(candidate=>candidate.data.translationGroup===group).sort((a,b)=>a.data.lang.localeCompare(b.data.lang));
+  return variants.length>1 ? variants.map(candidate=>[candidate.data.lang, `/blog/${candidate.data.slug}/`] as [typeof candidate.data.lang,string]) : [];
+}
+export function journalArticles(entries: Awaited<ReturnType<typeof visibleArticles>>) {
+  const groups=new Set<string>();
+  const preferred=[...entries].sort((a,b)=>Number(b.data.lang==='en')-Number(a.data.lang==='en'));
+  const selected=preferred.filter(entry=>{const group=entry.data.translationGroup;if(!group)return true;if(groups.has(group))return false;groups.add(group);return true;});
+  return selected.sort((a,b)=>b.data.date.getTime()-a.data.date.getTime());
+}

@@ -57,3 +57,28 @@ Do not duplicate the signup storage or change retention as part of this site.
 Search metadata, canonical URLs, JSON-LD, RSS, sitemap and robots use approved
 public content. Search Console, analytics and actual crawl/index status are
 separate checks, not implied by a successful build.
+
+## Article translations
+
+Give each language its own stable slug and Markdown file. Set the same optional
+`translationGroup` (lowercase letters, digits and hyphens) on translations of
+one article. Each group may have only one article per language; duplicates fail
+the build. The CMS exposes this as “Translation group”. Unrelated articles
+should not share an ID. The existing article about English words remains separate.
+
+The journal lists one entry per group, preferring English when available. An
+article with at least two visible versions gets a language switch and reciprocal
+`hreflang` links. Public builds only consider published versions; drafts never
+appear as public alternatives. Local private previews may show linked drafts and
+allow their author to remain unassigned. Published articles require an author.
+Switching language follows the selected link; no automatic redirect overrides a
+direct article URL. Article versions are approved and exported individually.
+
+## Light and dark screenshots
+
+For a theme-aware screenshot, write two consecutive Markdown images with the
+same alt text; name the second file with the suffix `-dark.png`.
+Keep both files in editorial media and use `/images/` paths. The reading style
+displays one image according to the chosen site theme, including system mode.
+Both image paths remain visible to the article export script. Use ordinary
+Markdown images for screenshots that do not need separate versions.
